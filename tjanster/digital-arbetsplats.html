@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kund AB hjälper er att skapa en modern och effektiv digital arbetsplats med molnbaserade lösningar, Microsoft 365 och säker informationshantering.">
+    <title>Digital arbetsplats | Gibon AB</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Schema.org strukturerad data enligt Google's riktlinjer -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Digital Arbetsplats",
+      "provider": {
+        "@type": "Organization",
+        "name": "Kund AB",
+        "url": "https://kund.se"
+      },
+      "description": "Modern digital arbetsplats med Microsoft 365, Teams och säker informationshantering.",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+    <style>
+    /* Förbättrad estetik och användbarhet */
+    :root {
+        --primary-color: #2d50a7;
+        --secondary-color: #5372c4;
+        --accent-color: #ff6b35;
+        --light-gray: #f5f7fa;
+        --medium-gray: #e4e8ef;
+        --dark-gray: #4a4a4a;
+        --text-color: #333;
+        --border-radius: 8px;
+        --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        --transition: all 0.3s ease;
+    }
+    
+    body {
+        font-family: 'Roboto', sans-serif;
+        color: var(--text-color);
+        line-height: 1.6;
+        background-color: #fff;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Source Sans Pro', sans-serif;
+        margin-top: 0;
+        color: #222;
+    }
+
+    h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+    h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+
+    .section-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--accent-color);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    /* Förbättrad Cookie Banner */
+    .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 1.5rem 0;
+        box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        border-top: 1px solid var(--medium-gray);
+    }
+
+    .cookie-content {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cookie-content h3 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .cookie-actions {
+        margin-top: 1rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+    /* Förbättrad Page Header */
+    .page-header {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: white;
+        padding: 3rem 0;
+        text-align: center;
+    }
+
+    .page-header h1 {
+        margin: 0;
+        color: white;
+        font-weight: 700;
+        font-size: 2.8rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .breadcrumbs {
+        color: rgba(255, 255, 255, 0.85);
+        margin-top: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .breadcrumbs a {
+        color: white;
+        text-decoration: none;
+        transition: var(--transition);
+    }
+
+    .breadcrumbs a:hover {
+        text-decoration: underline;
+    }
+
+    /* Knappar */
+    .btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        font-weight: 600;
+        text-align: center;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #1e3c8c;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(45, 80, 167, 0.25);
+    }
+
+    .btn-secondary {
+        background-color: white;
+        color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+    }
+
+    .btn-secondary:hover {
+        background-color: var(--light-gray);
+    }
+
+    /* Förbättrad Hero Section */
+    .service-hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin: 2rem 0 4rem;
+    }
+
+    .service-hero-content {
+        max-width: 700px;
+        text-align: center;
+    }
+
+    .service-hero-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .service-hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: var(--dark-gray);
+    }
+
+    .service-hero-image {
+        max-width: 100%;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+    }
+
+    .service-hero-image img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    /* Förbättrade fördelar */
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .benefit-card {
+        background-color: white;
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+        text-align: center;
+    }
+
+    .benefit-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .benefit-icon {
+        margin-bottom: 1.5rem;
+        font-size: 2.5rem;
+        color: var(--primary-color);
+    }
+
+    .benefit-card h3 {
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+
+    /* Förbättrade erbjudanden */
+    .service-offerings {
+        background-color: var(--light-gray);
+    }
+
+    .offering-item {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2.5rem;
+        margin-bottom: 4rem;
+        background-color: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+    }
+
+    .offering-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .offering-content {
+        padding: 2.5rem;
+    }
+
+    .offering-content h3 {
+        margin-top: 0;
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .offering-image {
+        width: 100%;
+        height: 300px;
+    }
+
+    .offering-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .offering-features {
+        margin-top: 1.5rem;
+        padding-left: 1.25rem;
+    }
+
+    .offering-features li {
+        margin-bottom: 0.75rem;
+        position: relative;
+    }
+
+    .offering-features li::before {
+        content: "\f00c";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        color: var(--accent-color);
+        position: absolute;
+        left: -1.5rem;
+    }
+
+    /* Förbättrade processteg */
+    .process-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+    }
+
+    .process-step {
+        background-color: white;
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        text-align: center;
+        position: relative;
+        transition: var(--transition);
+    }
+
+    .process-step:hover {
+        transform: translateY(-5px);
+    }
+
+    .step-number {
+        background-color: var(--primary-color);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin: 0 auto 1.5rem;
+        font-size: 1.25rem;
+    }
+
+    /* Förbättrade kundcase */
+    .case-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .case-card {
+        background-color: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+    }
+
+    .case-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .case-image {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .case-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .case-card:hover .case-image img {
+        transform: scale(1.05);
+    }
+
+    .case-content {
+        padding: 2rem;
+    }
+
+    .case-content h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .read-more {
+        display: inline-block;
+        margin-top: 1rem;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: var(--transition);
+    }
+
+    .read-more i {
+        margin-left: 0.5rem;
+        transition: var(--transition);
+    }
+
+    .read-more:hover {
+        color: var(--secondary-color);
+    }
+
+    .read-more:hover i {
+        transform: translateX(3px);
+    }
+
+    /* Förbättrade relaterade tjänster */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .service-card {
+        background-color: white;
+        padding: 2.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        text-align: center;
+        transition: var(--transition);
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .service-icon {
+        margin-bottom: 1.5rem;
+        font-size: 2.5rem;
+        color: var(--primary-color);
+    }
+
+    /* Förbättrad CTA */
+    .cta-section {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: white;
+        text-align: center;
+        padding: 5rem 0;
+    }
+
+    .cta-content h2 {
+        color: white;
+        margin-bottom: 1.5rem;
+        font-size: 2.5rem;
+    }
+
+    .cta-content p {
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+
+    .cta-content .btn-primary {
+        background-color: var(--accent-color);
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+    }
+    
+    .cta-content .btn-primary:hover {
+        background-color: #e85a26;
+    }
+
+    /* Responsivitet */
+    @media (min-width: 768px) {
+        .service-hero {
+            flex-direction: row;
+            gap: 4rem;
+        }
+        
+        .service-hero-content {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .service-hero-image {
+            flex: 1;
+        }
+        
+        .offering-item {
+            flex-direction: row;
+        }
+        
+        .offering-content {
+            flex: 1;
+        }
+        
+        .offering-image {
+            flex: 1;
+        }
+        
+        /* Varannan bild till vänster */
+        .offering-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    }
+    </style>
+</head>
+<body class="page-tjanst single-tjanst">
+    <!-- Cookie-banner -->
+    <div id="cookie-consent" class="cookie-banner">
+        <div class="container">
+            <div class="cookie-content">
+                <h3>Cookies på gibon.se</h3>
+                <p>Vi använder cookies för att förbättra din upplevelse på vår webbplats. Genom att fortsätta använda webbplatsen godkänner du användningen av cookies.</p>
+                <div class="cookie-actions">
+                    <button id="accept-cookies" class="btn btn-primary">Acceptera alla</button>
+                    <button id="customize-cookies" class="btn btn-secondary">Anpassa inställningar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../img/logo.svg.png" alt="Kund AB Logotyp" width="120" height="40">
+                    </a>
+                </div>
+                <nav class="main-navigation">
+                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                        <span class="screen-reader-text">Meny</span>
+                        <span class="hamburger"></span>
+                    </button>
+                    <ul id="primary-menu" class="menu">
+                        <li class="menu-item"><a href="../index.html">Hem</a></li>
+                        <li class="menu-item current-menu-ancestor has-children">
+                            <a href="../tjanster.html">Tjänster</a>
+                            <ul class="sub-menu">
+                                <li class="current-menu-item"><a href="digital-arbetsplats.html">Digital arbetsplats</a></li>
+                                <li><a href="webbutveckling.html">Webbutveckling</a></li>
+                                <li><a href="it-drift.html">IT-drift</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"><a href="../om-oss.html">Om Gibon</a></li>
+                        <li class="menu-item"><a href="../karriar.html">Karriär</a></li>
+                        <li class="menu-item"><a href="../hallbarhet.html">Hållbarhet</a></li>
+                        <li class="menu-item"><a href="../nyheter.html">Nyheter</a></li>
+                        <li class="menu-item"><a href="../kontakt.html">Kontakt</a></li>
+                        <li class="menu-item highlight"><a href="../support.html">Support</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidhuvud -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Digital arbetsplats</h1>
+            <div class="breadcrumbs">
+                <a href="../index.html">Hem</a> / <a href="../tjanster.html">Tjänster</a> / <span>Digital arbetsplats</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Huvudinnehåll -->
+    <main class="site-main">
+        <!-- Introduktion -->
+        <section class="section-intro">
+            <div class="container">
+                <div class="service-hero">
+                    <div class="service-hero-content">
+                        <h2>Framtidens arbetsplats är digital, flexibel och säker</h2>
+                        <p>I dagens snabbt föränderliga arbetsklimat är det viktigare än någonsin att ha en modern digital arbetsplats som möjliggör samarbete och produktivitet oavsett var medarbetarna befinner sig.</p>
+                        <p>Med vår tjänst för digital arbetsplats får ni en skräddarsydd lösning som förenklar arbetet, ökar effektiviteten och säkerställer att all information hanteras på ett säkert sätt.</p>
+                        <a href="../kontakt.html" class="btn btn-primary">Kontakta oss</a>
+                    </div>
+                    <div class="service-hero-image">
+                        <img src="../img/digital-wrokspace-hero.png" alt="Digital arbetsplats" width="600" height="400">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fördelar -->
+        <section class="service-benefits">
+            <div class="container">
+                <h2 class="section-title">Fördelar med en modern digital arbetsplats</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <h3>Förbättrat samarbete</h3>
+                        <p>Med moderna samarbetsverktyg kan era medarbetare enkelt arbeta tillsammans oavsett var de befinner sig, vilket förbättrar informationsutbytet och ökar effektiviteten.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Ökad produktivitet</h3>
+                        <p>En digital arbetsplats ger medarbetarna tillgång till rätt information och verktyg när de behöver det, vilket sparar tid och ökar produktiviteten.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Förbättrad säkerhet</h3>
+                        <p>Moderna säkerhetslösningar skyddar er data och ger bättre kontroll över känslig information, samtidigt som era medarbetare kan arbeta flexibelt.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3>Kostnadseffektivitet</h3>
+                        <p>Molnbaserade lösningar ger skalbarhet och flexibilitet vilket minskar behovet av stora initiala investeringar och ger förutsägbara driftskostnader.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vårt erbjudande -->
+        <section class="service-offerings">
+            <div class="container">
+                <h2 class="section-title">Vad vi erbjuder</h2>
+                
+                <div class="offering-item">
+                    <div class="offering-content">
+                        <h3>Microsoft 365-implementation</h3>
+                        <p>Vi hjälper er att implementera Microsoft 365 med alla dess verktyg som Teams, SharePoint, OneDrive och mycket mer. Vi skräddarsyr lösningen efter era specifika behov och säkerställer att alla funktioner fungerar optimalt tillsammans.</p>
+                        <ul class="offering-features">
+                            <li>Analys av era behov och arbetssätt</li>
+                            <li>Installation och konfiguration</li>
+                            <li>Migrering av data</li>
+                            <li>Säkerhetskonfiguration</li>
+                            <li>Utbildning för administratörer och användare</li>
+                        </ul>
+                    </div>
+                    <div class="offering-image">
+                        <img src="../img/microsoft-hero.png" alt="Microsoft 365" width="600" height="300">
+                    </div>
+                </div>
+                
+                <div class="offering-item">
+                    <div class="offering-content">
+                        <h3>Samarbetsplattformar</h3>
+                        <p>Vi implementerar och anpassar moderna samarbetsplattformar som Microsoft Teams, SharePoint och Yammer för att skapa ett digitalt nav för internt samarbete, kommunikation och informationsdelning.</p>
+                        <ul class="offering-features">
+                            <li>Anpassade Teams-miljöer</li>
+                            <li>Strukturerade dokumentbibliotek</li>
+                            <li>Intranätlösningar</li>
+                            <li>Process- och arbetsflödesautomatisering</li>
+                            <li>Integration med andra system</li>
+                        </ul>
+                    </div>
+                    <div class="offering-image">
+                        <img src="../img/samarbetsplattformar-hero.png" alt="Samarbetsverktyg" width="600" height="300">
+                    </div>
+                </div>
+                
+                <div class="offering-item">
+                    <div class="offering-content">
+                        <h3>Digital kommunikation</h3>
+                        <p>Effektiv kommunikation är nyckeln till en fungerande digital arbetsplats. Vi hjälper er att införa moderna digitala kommunikationskanaler som gör det enkelt för medarbetarna att hålla kontakten.</p>
+                        <ul class="offering-features">
+                            <li>Videomöten och webbsändningar</li>
+                            <li>Chattfunktioner och direktmeddelanden</li>
+                            <li>Digitala anslagstavlor</li>
+                            <li>Mobilanpassad kommunikation</li>
+                            <li>Distansmötesteknik</li>
+                        </ul>
+                    </div>
+                    <div class="offering-image">
+                        <img src="../img/digital-kommunikation-hero.png" alt="Digital kommunikation" width="600" height="300">
+                    </div>
+                </div>
+                
+                <div class="offering-item">
+                    <div class="offering-content">
+                        <h3>Säker informationshantering</h3>
+                        <p>Vi hjälper er att implementera lösningar för säker informationshantering som skyddar känslig data samtidigt som den är tillgänglig för de som behöver den.</p>
+                        <ul class="offering-features">
+                            <li>Dokumentklassificering</li>
+                            <li>Behörighetsstyrning</li>
+                            <li>Informationsskyddspolicies</li>
+                            <li>Säker delning av filer</li>
+                            <li>Efterlevnad av GDPR och andra regelverk</li>
+                        </ul>
+                    </div>
+                    <div class="offering-image">
+                        <img src="../img/safe-hero.png" alt="Säker informationshantering" width="600" height="300">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hur vi arbetar -->
+        <section class="service-process">
+            <div class="container">
+                <h2 class="section-title">Så här arbetar vi</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Analys och behovsidentifiering</h3>
+                        <p>Vi börjar med att förstå era behov, utmaningar och mål för att kunna skapa en skräddarsydd lösning som passar just er verksamhet.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Design av lösning</h3>
+                        <p>Baserat på analysen utformar vi en lösning som inkluderar rätt verktyg, plattformar och processer för att möta era behov.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Implementation</h3>
+                        <p>Vi implementerar lösningen stegvis och säkerställer att allt fungerar som det ska innan vi går vidare till nästa steg.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>Utbildning och förankring</h3>
+                        <p>Vi utbildar era användare och hjälper till att förankra de nya arbetssätten i organisationen för att säkerställa ett lyckat införande.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h3>Uppföljning och optimering</h3>
+                        <p>Efter implementationen följer vi upp för att se till att lösningen motsvarar era förväntningar och gör nödvändiga justeringar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kundcase -->
+        <section class="service-case-studies">
+            <div class="container">
+                <h2 class="section-title">Kundcase</h2>
+                <div class="case-grid">
+                    <div class="case-card">
+                        <div class="case-image">
+                            <img src="../img/kundcase-4.png" alt="Tillverkningsföretag" width="700" height="400">
+                        </div>                       
+                        <div class="case-content">
+                            <h3>Tillverkningsföretag moderniserar sin digitala arbetsplats</h3>
+                            <p>Ett ledande tillverkningsföretag behövde modernisera sin digitala arbetsplats för att förbättra samarbetet mellan kontor och produktionsanläggningar. Vi implementerade en Microsoft 365-lösning som resulterade i effektivare kommunikation och ökad produktivitet.</p>
+                            <a href="../case/tillverkningsforetag.html" class="read-more">Läs mer <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="case-card">
+                        <div class="case-image">
+                            <img src="../img/cundcase-5.png" alt="Tjänsteföretag" width="700" height="400">
+                        </div>
+                        <div class="case-content">
+                            <h3>Tjänsteföretag inför flexibelt arbetssätt</h3>
+                            <p>Ett växande tjänsteföretag ville införa ett mer flexibelt arbetssätt där medarbetarna kunde arbeta lika effektivt oavsett om de var på kontoret eller på resande fot. Vi hjälpte dem att implementera en digital arbetsplats med fokus på mobila lösningar.</p>
+                            <a href="../case/tjansteforetag.html" class="read-more">Läs mer <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Relaterade tjänster -->
+        <section class="related-services">
+            <div class="container">
+                <h2 class="section-title">Relaterade tjänster</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Webbutveckling</h3>
+                        <p>Skräddarsydda webbplatser och applikationer för era specifika behov.</p>
+                        <a href="webbutveckling.html" class="read-more">Läs mer <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>IT-drift</h3>
+                        <p>Säker och stabil drift av er IT-miljö med proaktiv övervakning.</p>
+                        <a href="it-drift.html" class="read-more">Läs mer <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Redo att modernisera er digitala arbetsplats?</h2>
+                    <p>Kontakta oss för en förutsättningslös diskussion om hur vi kan hjälpa just ert företag.</p>
+                    <a href="../kontakt.html" class="btn btn-primary">Kontakta oss</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-widgets">
+                <div class="footer-widget">
+                    <div class="footer-logo">
+                        <img src="../img/logo.svg.png" alt="Kund AB" width="120" height="40">
+                    </div>
+                    <p>Vi hjälper företag att förenkla sin vardag med modern teknik och smarta lösningar.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/kund-ab" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/kundab" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/kundab" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Tjänster</h3>
+                    <ul class="footer-menu">
+                        <li><a href="digital-arbetsplats.html">Digital arbetsplats</a></li>
+                        <li><a href="webbutveckling.html">Webbutveckling</a></li>
+                        <li><a href="it-drift.html">IT-drift</a></li>
+                        <li><a href="../tjanster.html">Alla tjänster</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Om Gibon</h3>
+                    <ul class="footer-menu">
+                        <li><a href="../om-oss.html">Om oss</a></li>
+                        <li><a href="../kontor.html">Våra kontor</a></li>
+                        <li><a href="../karriar.html">Karriär</a></li>
+                        <li><a href="../hallbarhet.html">Hållbarhet</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Kontakt &amp; Support</h3>
+                    <ul class="footer-menu">
+                        <li><a href="../kontakt.html">Kontakta oss</a></li>
+                        <li><a href="../support.html">Support</a></li>
+                        <li><a href="../faq.html">Vanliga frågor</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2024 Gibon AB. Alla rättigheter förbehållna.
+                </div>
+                <div class="footer-links">
+                    <a href="../integritetspolicy.html">Integritetspolicy</a>
+                    <a href="../cookiepolicy.html">Cookiepolicy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/cookie-consent.js"></script>

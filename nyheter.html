@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nyheter från Gibon - håll dig uppdaterad om våra senaste projekt, händelser och branschnyheter inom IT, webbutveckling och digital arbetsplats.">
+    <title>Nyheter | Gibon</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Schema.org strukturerad data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Gibon",
+      "url": "https://gibon.se",
+      "logo": "https://gibon.se/img/logo.svg",
+      "description": "Gibon är ett ledande IT-företag som erbjuder tjänster inom digital arbetsplats, webbutveckling och IT-drift.",
+      "foundingDate": "2012",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sveavägen 100",
+        "addressLocality": "Stockholm",
+        "postalCode": "113 50",
+        "addressCountry": "SE"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+46-8-123456",
+        "contactType": "customer service"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/gibon",
+        "https://twitter.com/gibon",
+        "https://www.facebook.com/gibon"
+      ]
+    }
+    </script>
+    <style>
+    /* Stilar för nyhetssidan */
+    :root {
+        --primary-color: #2d50a7;
+        --secondary-color: #5372c4;
+        --accent-color: #ff6b35;
+        --light-gray: #f5f7fa;
+        --medium-gray: #e4e8ef;
+        --dark-gray: #4a4a4a;
+        --text-color: #333;
+        --border-radius: 8px;
+        --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        --transition: all 0.3s ease;
+    }
+    
+    body {
+        font-family: 'Roboto', sans-serif;
+        color: var(--text-color);
+        line-height: 1.6;
+        background-color: #fff;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Source Sans Pro', sans-serif;
+        margin-top: 0;
+        color: #222;
+    }
+
+    h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+    h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+
+    .section-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--accent-color);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    /* Page Header */
+    .page-header {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: white;
+        padding: 3rem 0;
+        text-align: center;
+    }
+
+    .page-header h1 {
+        margin: 0;
+        color: white;
+        font-weight: 700;
+        font-size: 2.8rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .breadcrumbs {
+        color: rgba(255, 255, 255, 0.85);
+        margin-top: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .breadcrumbs a {
+        color: white;
+        text-decoration: none;
+        transition: var(--transition);
+    }
+
+    .breadcrumbs a:hover {
+        text-decoration: underline;
+    }
+
+    /* Nyhetsfiltrering */
+    .news-filters {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .filter-categories {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+
+    .filter-btn {
+        background-color: var(--light-gray);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 30px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .search-container {
+        position: relative;
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 0.75rem 1rem 0.75rem 2.5rem;
+        border: 1px solid var(--medium-gray);
+        border-radius: 30px;
+        font-size: 1rem;
+        transition: var(--transition);
+    }
+
+    .search-input:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(45, 80, 167, 0.1);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--dark-gray);
+    }
+
+    /* Huvudnyhetssektion */
+    .featured-news {
+        margin-bottom: 4rem;
+    }
+
+    .featured-article {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        background-color: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+    }
+
+    .featured-image {
+        height: 100%;
+        min-height: 400px;
+        overflow: hidden;
+    }
+
+    .featured-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .featured-article:hover .featured-image img {
+        transform: scale(1.05);
+    }
+
+    .featured-content {
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .article-category {
+        display: inline-block;
+        background-color: var(--accent-color);
+        color: white;
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+    }
+
+    .article-category.event {
+        background-color: #4caf50;
+    }
+
+    .article-category.tech {
+        background-color: #2196f3;
+    }
+
+    .article-category.company {
+        background-color: var(--accent-color);
+    }
+
+    .article-category.project {
+        background-color: #9c27b0;
+    }
+
+    .featured-content h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+    }
+
+    .featured-content p {
+        margin-bottom: 1.5rem;
+        color: var(--dark-gray);
+        font-size: 1.1rem;
+    }
+
+    .article-meta {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        color: var(--dark-gray);
+        font-size: 0.95rem;
+    }
+
+    .article-author {
+        display: flex;
+        align-items: center;
+        margin-right: 2rem;
+    }
+
+    .author-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 1rem;
+    }
+
+    .author-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .article-date {
+        display: flex;
+        align-items: center;
+    }
+
+    .article-date i {
+        margin-right: 0.5rem;
+    }
+
+    .article-link {
+        display: inline-flex;
+        align-items: center;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        gap: 0.5rem;
+        margin-top: auto;
+        transition: var(--transition);
+    }
+
+    .article-link:hover {
+        color: var(--accent-color);
+    }
+
+    .article-link i {
+        font-size: 0.8rem;
+    }
+
+    /* Nyhetsgrid */
+    .news-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .news-card {
+        background-color: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .news-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .news-image {
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .news-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .news-card:hover .news-image img {
+        transform: scale(1.05);
+    }
+
+    .news-content {
+        padding: 2rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .news-content h3 {
+        font-size: 1.4rem;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+    }
+
+    .news-content p {
+        margin-bottom: 1.5rem;
+        color: var(--dark-gray);
+    }
+
+    .news-meta {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--medium-gray);
+        font-size: 0.9rem;
+    }
+
+    .news-date {
+        color: var(--dark-gray);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    /* Paginering */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 4rem;
+        gap: 0.5rem;
+    }
+
+    .page-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--light-gray);
+        color: var(--text-color);
+        text-decoration: none;
+        transition: var(--transition);
+    }
+
+    .page-link:hover, .page-link.active {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .page-link.prev, .page-link.next {
+        width: auto;
+        padding: 0 1rem;
+        border-radius: 20px;
+    }
+
+    .page-link.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    /* Prenumerationssektion */
+    .subscribe-section {
+        background-color: var(--light-gray);
+        padding: 5rem 0;
+        text-align: center;
+        margin-top: 4rem;
+    }
+
+    .subscribe-content {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .subscribe-content h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    .subscribe-content p {
+        margin-bottom: 2rem;
+        color: var(--dark-gray);
+    }
+
+    .subscribe-form {
+        display: flex;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .form-input {
+        flex-grow: 1;
+        padding: 1rem 1.5rem;
+        border: 1px solid var(--medium-gray);
+        border-right: none;
+        border-top-left-radius: var(--border-radius);
+        border-bottom-left-radius: var(--border-radius);
+        font-size: 1rem;
+        transition: var(--transition);
+    }
+
+    .form-input:focus {
+        outline: none;
+        border-color: var(--primary-color);
+    }
+
+    .btn-subscribe {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-top-right-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .btn-subscribe:hover {
+        background-color: var(--secondary-color);
+    }
+
+    /* Evenemang */
+    .events-section {
+        margin-top: 5rem;
+    }
+
+    .events-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .event-card {
+        display: flex;
+        gap: 2rem;
+        background-color: white;
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+    }
+
+    .event-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .event-date-box {
+        flex: 0 0 100px;
+        height: 100px;
+        border-radius: var(--border-radius);
+        background-color: var(--primary-color);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .event-day {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    .event-month {
+        font-size: 1rem;
+        text-transform: uppercase;
+        margin-top: 0.4rem;
+    }
+
+    .event-content {
+        flex: 1;
+    }
+
+    .event-content h3 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .event-meta {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 1rem;
+        color: var(--dark-gray);
+        font-size: 0.9rem;
+    }
+
+    .event-meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .event-content p {
+        margin-bottom: 1rem;
+    }
+
+    .event-actions {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .btn-register {
+        display: inline-block;
+        background-color: var(--accent-color);
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        font-weight: 600;
+        transition: var(--transition);
+    }
+
+    .btn-register:hover {
+        background-color: #e85a26;
+    }
+
+    .btn-details {
+        display: inline-block;
+        background-color: var(--light-gray);
+        color: var(--text-color);
+        padding: 0.6rem 1.2rem;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        font-weight: 600;
+        transition: var(--transition);
+    }
+
+    .btn-details:hover {
+        background-color: var(--medium-gray);
+    }
+
+    .section-divider {
+        height: 1px;
+        background-color: var(--medium-gray);
+        margin: 5rem 0;
+    }
+    </style>
+</head>
+<body class="page-nyheter">
+    <!-- Cookie-banner -->
+    <div id="cookie-consent" class="cookie-banner">
+        <div class="container">
+            <div class="cookie-content">
+                <h3>Cookies på gibon.se</h3>
+                <p>Vi använder cookies för att förbättra din upplevelse på vår webbplats. Genom att fortsätta använda webbplatsen godkänner du användningen av cookies.</p>
+                <div class="cookie-actions">
+                    <button id="accept-cookies" class="btn btn-primary">Acceptera alla</button>
+                    <button id="customize-cookies" class="btn btn-secondary">Anpassa inställningar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.svg.png" alt="Gibon Logotyp" width="120" height="40">
+                    </a>
+                </div>
+                <nav class="main-navigation">
+                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                        <span class="screen-reader-text">Meny</span>
+                        <span class="hamburger"></span>
+                    </button>
+                    <ul id="primary-menu" class="menu">
+                        <li class="menu-item"><a href="index.html">Hem</a></li>
+                        <li class="menu-item has-children">
+                            <a href="tjanster.html">Tjänster</a>
+                            <ul class="sub-menu">
+                                <li><a href="tjanster/digital-arbetsplats.html">Digital arbetsplats</a></li>
+                                <li><a href="tjanster/webbutveckling.html">Webbutveckling</a></li>
+                                <li><a href="tjanster/it-drift.html">IT-drift</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"><a href="om-oss.html">Om Gibon</a></li>
+                        <li class="menu-item"><a href="karriar.html">Karriär</a></li>
+                        <li class="menu-item"><a href="hallbarhet.html">Hållbarhet</a></li>
+                        <li class="menu-item current-menu-item"><a href="nyheter.html">Nyheter</a></li>
+                        <li class="menu-item"><a href="kontakt.html">Kontakt</a></li>
+                        <li class="menu-item highlight"><a href="support.html">Support</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidhuvud -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Nyheter</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Hem</a> / <span>Nyheter</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Huvudinnehåll -->
+    <main class="site-main">
+        <section class="news-section">
+            <div class="container">
+                <!-- Filtreringssystem -->
+                <div class="news-filters">
+                    <div class="filter-categories">
+                        <button class="filter-btn active">Alla</button>
+                        <button class="filter-btn">Företagsnyheter</button>
+                        <button class="filter-btn">Projekt</button>
+                        <button class="filter-btn">Tekniktrender</button>
+                        <button class="filter-btn">Evenemang</button>
+                    </div>
+                    
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class="search-input" placeholder="Sök nyheter">
+                    </div>
+                </div>
+                
+                <!-- Huvudnyhet -->
+                <div class="featured-news">
+                    <article class="featured-article">
+                        <div class="featured-image">
+                            <img src="img/ny_molntjanst.png" alt="Gibon lanserar ny molntjänst" width="400" height="200">
+                        </div>
+                        <div class="featured-content">
+                            <span class="article-category company">Företagsnyheter</span>
+                            <h2>Gibon lanserar ny molntjänst för säker och flexibel digital arbetsplats</h2>
+                            <div class="article-meta">
+                                <div class="article-author">
+                                    <div class="author-avatar">
+                                        <img src="img/linda_karlsson.png" alt="Sofia Bergström" width="600" height="400">
+                                    </div>
+                                    <span>Sofia Bergström</span>
+                                </div>
+                                <div class="article-date">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>15 april, 2024</span>
+                                </div>
+                            </div>
+                            <p>Idag lanserar vi vår nya molntjänst Gibon Workspace Cloud, som gör det möjligt för företag att skapa säkra, flexibla och effektiva digitala arbetsplatser. Tjänsten kombinerar säker datalagring, sömlös åtkomst till företagets system och avancerade samarbetsverktyg i en integrerad lösning.</p>
+                            <a href="nyheter/gibon-lanserar-ny-molntjanst.html" class="article-link">Läs mer <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Nyhetsgrid -->
+                <div class="news-grid">
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="img/nyhet_tva.png" alt="Gibon expanderar" width="400" height="200">
+                        </div>
+                        <div class="news-content">
+                            <span class="article-category company">Företagsnyheter</span>
+                            <h3>Gibons app för vårdgivare vann prestigefyllt innovationspris</h3>
+                            <p>Vi är stolta över att meddela att vårt team har tilldelats "Årets Digitala Innovation" för den nya appen som effektiviserar arbetsflöden för vårdpersonal.</p>
+                            <div class="news-meta">
+                                <div class="news-date">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>7 mars, 2024</span>
+                                </div>
+                                <a href="nyheter/gibon-vinner-innovationspris.html" class="article-link">Läs mer <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Paginering -->
+                <div class="pagination">
+                    <a href="#" class="page-link prev disabled">
+                        <i class="fas fa-chevron-left"></i> Föregående
+                    </a>
+                    <a href="#" class="page-link active">1</a>
+                    <a href="#" class="page-link">2</a>
+                    <a href="#" class="page-link">3</a>
+                    <span class="page-link">...</span>
+                    <a href="#" class="page-link">8</a>
+                    <a href="#" class="page-link next">
+                        Nästa <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <div class="section-divider"></div>
+        
+        <!-- Kommande evenemang -->
+        <section class="events-section">
+            <div class="container">
+                <h2 class="section-title">Kommande evenemang</h2>
+                
+                <div class="events-list">
+                    <div class="event-card">
+                        <div class="event-date-box">
+                            <span class="event-day">18</span>
+                            <span class="event-month">maj</span>
+                        </div>
+                        <div class="event-content">
+                            <h3>Gibon Tech Summit 2024</h3>
+                            <div class="event-meta">
+                                <div class="event-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>09:00 - 16:00</span>
+                                </div>
+                                <div class="event-meta-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Waterfront Congress Centre, Stockholm</span>
+                                </div>
+                            </div>
+                            <p>Delta i vår årliga teknikkonferens där vi presenterar nya IT-trender, praktikfall och paneldiskussioner med ledande experter från branschen. Årets tema är "Säker AI i företagsmiljöer".</p>
+                            <div class="event-actions">
+                                <a href="evenemang/tech-summit-2024.html" class="btn-register">Anmäl dig</a>
+                                <a href="evenemang/tech-summit-2024.html" class="btn-details">Mer information</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-date-box">
+                            <span class="event-day">05</span>
+                            <span class="event-month">jun</span>
+                        </div>
+                        <div class="event-content">
+                            <h3>Webbinar: Den säkra digitala arbetsplatsen</h3>
+                            <div class="event-meta">
+                                <div class="event-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>13:00 - 14:30</span>
+                                </div>
+                                <div class="event-meta-item">
+                                    <i class="fas fa-laptop"></i>
+                                    <span>Online</span>
+                                </div>
+                            </div>
+                            <p>I detta webbinar går vi igenom hur du skapar en säker digital arbetsplats som också främjar produktivitet och samarbete. Vi demonstrerar vår nya molntjänst och delar med oss av bästa praxis.</p>
+                            <div class="event-actions">
+                                <a href="evenemang/webbinar-saker-digital-arbetsplats.html" class="btn-register">Anmäl dig</a>
+                                <a href="evenemang/webbinar-saker-digital-arbetsplats.html" class="btn-details">Mer information</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-date-box">
+                            <span class="event-day">12</span>
+                            <span class="event-month">jun</span>
+                        </div>
+                        <div class="event-content">
+                            <h3>Frukostseminarium: Framtidens IT-infrastruktur</h3>
+                            <div class="event-meta">
+                                <div class="event-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>08:00 - 10:00</span>
+                                </div>
+                                <div class="event-meta-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Gibon kontor, Göteborg</span>
+                                </div>
+                            </div>
+                            <p>Välkommen till ett frukostseminarium där vi diskuterar hur modern IT-infrastruktur kan ge ditt företag konkurrensfördelar. Vi går igenom hybridmolnlösningar, automatisering och kostnadseffektiv drift.</p>
+                            <div class="event-actions">
+                                <a href="evenemang/frukostseminarium-it-infrastruktur.html" class="btn-register">Anmäl dig</a>
+                                <a href="evenemang/frukostseminarium-it-infrastruktur.html" class="btn-details">Mer information</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center" style="margin-top: 2rem;">
+                    <a href="evenemang.html" class="article-link">Visa alla evenemang <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Prenumerationssektion -->
+        <section class="subscribe-section">
+            <div class="container">
+                <div class="subscribe-content">
+                    <h2>Håll dig uppdaterad</h2>
+                    <p>Prenumerera på vårt nyhetsbrev för att få de senaste nyheterna, inbjudningar till evenemang och expertråd direkt i din inkorg.</p>
+                    <form class="subscribe-form">
+                        <input type="email" class="form-input" placeholder="Din e-postadress" required>
+                        <button type="submit" class="btn-subscribe">Prenumerera</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-widgets">
+                <div class="footer-widget">
+                    <div class="footer-logo">
+                        <img src="img/logo.svg.png" alt="Gibon" width="120" height="40">
+                    </div>
+                    <p>Vi hjälper företag att förenkla sin vardag med modern teknik och smarta lösningar.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/gibon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/gibon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/gibon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Tjänster</h3>
+                    <ul class="footer-menu">
+                        <li><a href="tjanster/digital-arbetsplats.html">Digital arbetsplats</a></li>
+                        <li><a href="tjanster/webbutveckling.html">Webbutveckling</a></li>
+                        <li><a href="tjanster/it-drift.html">IT-drift</a></li>
+                        <li><a href="tjanster.html">Alla tjänster</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Om Gibon</h3>
+                    <ul class="footer-menu">
+                        <li><a href="om-oss.html">Om oss</a></li>
+                        <li><a href="kontor.html">Våra kontor</a></li>
+                        <li><a href="karriar.html">Karriär</a></li>
+                        <li><a href="hallbarhet.html">Hållbarhet</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Kontakt &amp; Support</h3>
+                    <ul class="footer-menu">
+                        <li><a href="kontakt.html">Kontakta oss</a></li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="faq.html">Vanliga frågor</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2024 Gibon. Alla rättigheter förbehållna.
+                </div>
+                <div class="footer-links">
+                    <a href="integritetspolicy.html">Integritetspolicy</a>
+                    <a href="cookiepolicy.html">Cookiepolicy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cookie-consent.js"></script>
+    <script>
+        // Filtreringsfunktion för nyhetskategorierna
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Ta bort active-klassen från alla knappar
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Lägg till active-klassen på den klickade knappen
+                this.classList.add('active');
+                
+                // Här skulle logiken för att filtrera nyheter komma i en verklig implementation
+                // För denna demo så gör vi ingenting mer än att visa den aktiva knappen
+            });
+        });
+    </script>
+</body>
+</html>
+                           

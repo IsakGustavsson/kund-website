@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Karriär hos Gibon - bli en del av vårt team! Utforska våra lediga tjänster och möjligheter inom IT, digital arbetsplats och webbutveckling.">
+    <title>Karriär | Gibon</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Schema.org strukturerad data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Gibon",
+      "url": "https://gibon.se",
+      "logo": "https://gibon.se/img/logo.svg",
+      "description": "Gibon är ett ledande IT-företag som erbjuder tjänster inom digital arbetsplats, webbutveckling och IT-drift.",
+      "foundingDate": "2012",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sveavägen 100",
+        "addressLocality": "Stockholm",
+        "postalCode": "113 50",
+        "addressCountry": "SE"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+46-8-123456",
+        "contactType": "customer service"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/gibon",
+        "https://twitter.com/gibon",
+        "https://www.facebook.com/gibon"
+      ]
+    }
+    </script>
+    <style>
+    /* Stilar för karriärsidan */
+    :root {
+        --primary-color: #2d50a7;
+        --secondary-color: #5372c4;
+        --accent-color: #ff6b35;
+        --light-gray: #f5f7fa;
+        --medium-gray: #e4e8ef;
+        --dark-gray: #4a4a4a;
+        --text-color: #333;
+        --border-radius: 8px;
+        --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        --transition: all 0.3s ease;
+    }
+    
+    body {
+        font-family: 'Roboto', sans-serif;
+        color: var(--text-color);
+        line-height: 1.6;
+        background-color: #fff;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Source Sans Pro', sans-serif;
+        margin-top: 0;
+        color: #222;
+    }
+
+    h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+    h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+
+    .section-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--accent-color);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    /* Page Header */
+    .page-header {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: white;
+        padding: 3rem 0;
+        text-align: center;
+    }
+
+    .page-header h1 {
+        margin: 0;
+        color: white;
+        font-weight: 700;
+        font-size: 2.8rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .breadcrumbs {
+        color: rgba(255, 255, 255, 0.85);
+        margin-top: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .breadcrumbs a {
+        color: white;
+        text-decoration: none;
+        transition: var(--transition);
+    }
+
+    .breadcrumbs a:hover {
+        text-decoration: underline;
+    }
+
+    /* Karriärintro */
+    .career-intro {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        margin: 2rem 0 4rem;
+    }
+
+    .career-intro-content {
+        flex: 1;
+    }
+
+    .career-intro-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .career-intro-content p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: var(--dark-gray);
+    }
+
+    .career-intro-image {
+        flex: 1;
+        max-width: 500px;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+    }
+
+    .career-intro-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Förmåner */
+    .benefits-section {
+        background-color: var(--light-gray);
+        padding: 5rem 0;
+    }
+
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .benefit-card {
+        background-color: white;
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        text-align: center;
+        transition: var(--transition);
+    }
+
+    .benefit-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .benefit-icon {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+    }
+
+    .benefit-card h3 {
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+    }
+
+    .benefit-card p {
+        color: var(--dark-gray);
+    }
+
+    /* Lediga tjänster */
+    .jobs-section {
+        padding: 5rem 0;
+    }
+
+    .job-filter {
+        margin-bottom: 2.5rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .filter-btn {
+        background-color: var(--light-gray);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 30px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .jobs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2rem;
+    }
+
+    .job-card {
+        background-color: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .job-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .job-content {
+        padding: 2rem;
+        flex-grow: 1;
+    }
+
+    .job-location {
+        color: var(--accent-color);
+        font-weight: 500;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .job-card h3 {
+        margin: 0 0 1rem;
+        font-size: 1.3rem;
+    }
+
+    .job-card p {
+        margin-bottom: 1.5rem;
+    }
+
+    .job-meta {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--dark-gray);
+        font-size: 0.95rem;
+    }
+
+    .job-meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .job-footer {
+        padding: 1.5rem 2rem;
+        border-top: 1px solid var(--medium-gray);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .job-date {
+        color: var(--dark-gray);
+        font-size: 0.95rem;
+    }
+
+    .job-apply {
+        background-color: var(--accent-color);
+        color: white;
+        padding: 0.7rem 1.5rem;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        font-weight: 600;
+        transition: var(--transition);
+        display: inline-block;
+    }
+    
+    .job-apply:hover {
+        background-color: #e85a26;
+        transform: translateY(-2px);
+    }
+
+    /* Ansökningsprocess */
+    .process-section {
+        background-color: var(--light-gray);
+        padding: 5rem 0;
+    }
+
+    .process-steps {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+        position: relative;
+    }
+
+    .process-steps:before {
+        content: '';
+        position: absolute;
+        top: 50px;
+        left: 60px;
+        right: 60px;
+        height: 4px;
+        background-color: var(--primary-color);
+        z-index: 0;
+    }
+
+    .process-step {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        width: 150px;
+    }
+
+    .step-number {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        color: white;
+        font-size: 2rem;
+        font-weight: 700;
+        box-shadow: var(--box-shadow);
+    }
+
+    .process-step h3 {
+        margin-bottom: 1rem;
+    }
+
+    .process-step p {
+        font-size: 0.95rem;
+        color: var(--dark-gray);
+    }
+
+    /* Medarbetarröster */
+    .testimonials-section {
+        padding: 5rem 0;
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+
+    .testimonial {
+        background-color: white;
+        padding: 2.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        position: relative;
+    }
+
+    .testimonial:before {
+        content: '\201C';
+        font-size: 5rem;
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        color: rgba(45, 80, 167, 0.1);
+        font-family: serif;
+        line-height: 0;
+    }
+
+    .testimonial-content {
+        font-style: italic;
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .author-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .author-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .author-info h4 {
+        margin: 0 0 0.25rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    .author-role {
+        color: var(--accent-color);
+        font-size: 0.9rem;
+    }
+
+    /* Initiativ-sektion */
+    .initiatives-section {
+        background-color: var(--light-gray);
+        padding: 5rem 0;
+    }
+
+    .initiatives-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+
+    .initiative-card {
+        background-color: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+    }
+
+    .initiative-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .initiative-image {
+        height: 250px;
+        overflow: hidden;
+    }
+
+    .initiative-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .initiative-card:hover .initiative-image img {
+        transform: scale(1.05);
+    }
+
+    .initiative-content {
+        padding: 2rem;
+    }
+
+    .initiative-content h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .initiative-content p {
+        margin-bottom: 1.5rem;
+    }
+
+    .initiative-link {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+    }
+
+    .initiative-link:hover {
+        color: var(--accent-color);
+    }
+
+    .initiative-link i {
+        font-size: 0.8rem;
+    }
+
+    /* CTA */
+    .cta-section {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: white;
+        text-align: center;
+        padding: 5rem 0;
+    }
+
+    .cta-content h2 {
+        color: white;
+        margin-bottom: 1.5rem;
+        font-size: 2.5rem;
+    }
+
+    .cta-content p {
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+
+    .cta-content .btn-primary {
+        background-color: var(--accent-color);
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+        display: inline-block;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        font-weight: 600;
+        text-align: center;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+        color: white;
+    }
+    
+    .cta-content .btn-primary:hover {
+        background-color: #e85a26;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 107, 53, 0.25);
+    }
+
+    /* Spontanansökan */
+    .application-form {
+        max-width: 800px;
+        margin: 3rem auto 0;
+        padding: 2.5rem;
+        background-color: white;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: var(--text-color);
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+        border: 1px solid var(--medium-gray);
+        border-radius: var(--border-radius);
+        transition: var(--transition);
+    }
+
+    .form-control:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 2px rgba(45, 80, 167, 0.2);
+    }
+
+    .form-row {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .form-row .form-group {
+        flex: 1;
+    }
+
+    .form-check {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .form-check-input {
+        margin-top: 0.3rem;
+    }
+
+    textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+    }
+
+    .form-submit {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .file-upload {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .file-upload-label {
+        background-color: var(--light-gray);
+        color: var(--text-color);
+        padding: 0.8rem 1rem;
+        border-radius: var(--border-radius);
+        display: block;
+        text-align: center;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .file-upload-label:hover {
+        background-color: var(--medium-gray);
+    }
+
+    .file-upload input[type="file"] {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    .file-name {
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--dark-gray);
+    }
+    </style>
+</head>
+<body class="page-karriar">
+    <!-- Cookie-banner -->
+    <div id="cookie-consent" class="cookie-banner">
+        <div class="container">
+            <div class="cookie-content">
+                <h3>Cookies på gibon.se</h3>
+                <p>Vi använder cookies för att förbättra din upplevelse på vår webbplats. Genom att fortsätta använda webbplatsen godkänner du användningen av cookies.</p>
+                <div class="cookie-actions">
+                    <button id="accept-cookies" class="btn btn-primary">Acceptera alla</button>
+                    <button id="customize-cookies" class="btn btn-secondary">Anpassa inställningar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.svg.png" alt="Gibon Logotyp" width="120" height="40">
+                    </a>
+                </div>
+                <nav class="main-navigation">
+                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                        <span class="screen-reader-text">Meny</span>
+                        <span class="hamburger"></span>
+                    </button>
+                    <ul id="primary-menu" class="menu">
+                        <li class="menu-item"><a href="index.html">Hem</a></li>
+                        <li class="menu-item has-children">
+                            <a href="tjanster.html">Tjänster</a>
+                            <ul class="sub-menu">
+                                <li><a href="tjanster/digital-arbetsplats.html">Digital arbetsplats</a></li>
+                                <li><a href="tjanster/webbutveckling.html">Webbutveckling</a></li>
+                                <li><a href="tjanster/it-drift.html">IT-drift</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"><a href="om-oss.html">Om Gibon</a></li>
+                        <li class="menu-item current-menu-item"><a href="karriar.html">Karriär</a></li>
+                        <li class="menu-item"><a href="hallbarhet.html">Hållbarhet</a></li>
+                        <li class="menu-item"><a href="nyheter.html">Nyheter</a></li>
+                        <li class="menu-item"><a href="kontakt.html">Kontakt</a></li>
+                        <li class="menu-item highlight"><a href="support.html">Support</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidhuvud -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Karriär hos Gibon</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Hem</a> / <span>Karriär</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Huvudinnehåll -->
+    <main class="site-main">
+        <!-- Introduktion -->
+        <section class="section-intro">
+            <div class="container">
+                <div class="career-intro">
+                    <div class="career-intro-content">
+                        <h2>Utveckla din karriär med oss</h2>
+                        <p>På Gibon erbjuder vi mer än bara ett jobb – vi erbjuder en karriär där du kan växa och utvecklas tillsammans med några av Sveriges mest talangfulla IT-specialister. Vi strävar efter att skapa en arbetsplats där innovation, samarbete och personlig utveckling står i centrum.</p>
+                        <p>Vår framgång bygger på våra medarbetares kunskap, engagemang och kreativitet. Därför investerar vi aktivt i vår personal genom kontinuerlig kompetensutveckling, mentorskap och spännande utmaningar i form av varierande projekt hos våra kunder.</p>
+                        <p>Vi tror på balans mellan arbete och fritid, och erbjuder flexibla arbetssätt som gör det möjligt för våra medarbetare att prestera på topp samtidigt som de kan leva ett rikt liv utanför jobbet.</p>
+                    </div>
+                    <div class="career-intro-image">
+                        <img src="img/gibon_kontor.jpg.png" alt="Gibon arbetsplats" width="500" height="350">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Förmåner -->
+        <section class="benefits-section">
+            <div class="container">
+                <h2 class="section-title">Förmåner hos Gibon</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Kompetensutveckling</h3>
+                        <p>Vi investerar i din utveckling med utbildningar, certifieringar och konferenser. Varje medarbetare får en personlig utvecklingsplan och dedikerad tid för kompetensutveckling.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Hälsa & Välbefinnande</h3>
+                        <p>Generöst friskvårdsbidrag, hälsoundersökningar, sjukvårdsförsäkring och aktiviteter för att främja både fysisk och mental hälsa.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3>Work-Life Balance</h3>
+                        <p>Flexibla arbetstider, möjlighet till distansarbete och generös föräldrapolicy för att du ska kunna kombinera karriär med ett rikt privatliv.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Stark gemenskap</h3>
+                        <p>Regelbundna sociala aktiviteter, teambuilding och en inkluderande företagskultur där alla känner sig välkomna och värdefulla.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3>Spännande projekt</h3>
+                        <p>Arbeta med de senaste teknologierna i utmanande projekt hos framstående kunder i olika branscher.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Karriärmöjligheter</h3>
+                        <p>Tydliga karriärvägar och möjligheter att växa både som specialist och ledare inom organisationen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lediga tjänster -->
+        <section class="jobs-section">
+            <div class="container">
+                <h2 class="section-title">Lediga tjänster</h2>
+                
+                <div class="job-filter">
+                    <button class="filter-btn active">Alla tjänster</button>
+                    <button class="filter-btn">Stockholm</button>
+                    <button class="filter-btn">Göteborg</button>
+                    <button class="filter-btn">Malmö</button>
+                    <button class="filter-btn">Utveckling</button>
+                    <button class="filter-btn">Konsult</button>
+                    <button class="filter-btn">IT-drift</button>
+                </div>
+                
+                <div class="jobs-grid">
+                    <div class="job-card">
+                        <div class="job-content">
+                            <span class="job-location">Stockholm</span>
+                            <h3>Senior Frontend-utvecklare</h3>
+                            <div class="job-meta">
+                                <div class="job-meta-item">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>Heltid</span>
+                                </div>
+                                <div class="job-meta-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Huvudkontoret</span>
+                                </div>
+                            </div>
+                            <p>Vi söker en erfaren frontend-utvecklare med passion för att skapa intuitiva och moderna användargränssnitt. I rollen kommer du att arbeta med de senaste teknikerna inom JavaScript, React och relaterade teknologier.</p>
+                        </div>
+                        <div class="job-footer">
+                            <div class="job-date">Publicerad: 2024-03-28</div>
+                            <a href="karriar/ux-ui-designer.html" class="job-apply">Läs mer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ansökningsprocess -->
+        <section class="process-section">
+            <div class="container">
+                <h2 class="section-title">Vår ansökningsprocess</h2>
+                <p class="section-intro text-center">Vi strävar efter en transparent och effektiv rekryteringsprocess som ser ut enligt följande:</p>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Ansökan</h3>
+                        <p>Skicka in din ansökan via vår hemsida. Glöm inte att inkludera CV och ett personligt brev.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Första intervju</h3>
+                        <p>Om din profil matchar våra krav bjuds du in till en första intervju, antingen på plats eller digitalt.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Teknisk utvärdering</h3>
+                        <p>För tekniska roller genomför vi en utvärdering av dina kunskaper genom praktiska uppgifter eller tester.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>Slutlig intervju</h3>
+                        <p>Träffa teamet och diskutera hur du kan bidra till Gibon och vad vi kan erbjuda dig.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h3>Erbjudande</h3>
+                        <p>Vid ett positivt beslut får du ett erbjudande och blir en del av Gibon-teamet!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medarbetarröster -->
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title">Röster från våra medarbetare</h2>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>Efter att ha jobbat som utvecklare på flera företag kan jag säga att Gibon verkligen sticker ut. Här får jag arbeta med moderna tekniker och utmanande projekt, samtidigt som jag har stor frihet att planera mitt arbete. Den starka gemenskapen och fokus på kompetensutveckling gör att jag ständigt växer i min roll.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="img/erik_lindberg.png" alt="Johan Andersson" width="60" height="60">
+                            </div>
+                            <div class="author-info">
+                                <h4>Johan Andersson</h4>
+                                <span class="author-role">Senior Systemutvecklare, 3 år på Gibon</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>Det bästa med Gibon är den positiva atmosfären och att företaget verkligen bryr sig om sina anställda. Jag har kunnat utvecklas både som projektledare och människa tack vare det stöd jag fått. Flexibiliteten gör också att jag kan kombinera mitt krävande jobb med familjeliv på ett sätt som passar mig.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="img/linda_karlsson.png" alt="Maria Johansson" width="60" height="60">
+                            </div>
+                            <div class="author-info">
+                                <h4>Maria Johansson</h4>
+                                <span class="author-role">Projektledare, 4 år på Gibon</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>Som nyutexaminerad var jag osäker på vilket företag som skulle passa mig bäst. Valet föll på Gibon och det har jag inte ångrat en sekund. Från dag ett fick jag en mentor som hjälpte mig att komma in i arbetet, och även om projekten var utmanande så fanns alltid stöd att få. Nu två år senare har jag utvecklats enormt.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="img/markus_holm.png" alt="Alexander Nguyen" width="60" height="60">
+                            </div>
+                            <div class="author-info">
+                                <h4>Alexander Nguyen</h4>
+                                <span class="author-role">Frontend-utvecklare, 2 år på Gibon</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>Genom Gibon har jag fått möjlighet att arbeta med företag i olika branscher och lösa spännande utmaningar. Det som imponerar mest är hur företaget ständigt investerar i vår kompetensutveckling och uppmuntrar oss att testa nya idéer. Det är en kreativ miljö där innovation värdesätts och tas tillvara.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="img/sofia_bergstrom.png" alt="Emma Svensson" width="60" height="60">
+                            </div>
+                            <div class="author-info">
+                                <h4>Emma Svensson</h4>
+                                <span class="author-role">UX-specialist, 3 år på Gibon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Karriärutveckling och aktiviteter -->
+        <section class="initiatives-section">
+            <div class="container">
+                <h2 class="section-title">Karriärutveckling och arbetskultur</h2>
+                
+                <div class="initiatives-grid">
+                    <div class="initiative-card">
+                        <div class="initiative-image">
+                            <img src="img/mentor_programmet.png" alt="Mentorskapsprogram" width="500" height="250">
+                        </div>
+                        <div class="initiative-content">
+                            <h3>Mentorskapsprogram</h3>
+                            <p>Vårt strukturerade mentorskapsprogram ger dig möjlighet att lära av erfarna kollegor. Som nyanställd får du en dedikerad mentor, och när du utvecklats kan du själv dela med dig av dina kunskaper genom att bli mentor.</p>
+                            <a href="#" class="initiative-link">Läs mer om vårt mentorskapsprogram <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="initiative-card">
+                        <div class="initiative-image">
+                            <img src="img/tech-talk.png" alt="Tech Talks" width="500" height="250">
+                        </div>
+                        <div class="initiative-content">
+                            <h3>Gibon Tech Talks</h3>
+                            <p>Varje månad anordnar vi Tech Talks där både interna och externa talare delar med sig av kunskap inom olika tekniska områden. Dessa sessioner ger inspiration och håller oss uppdaterade om de senaste trenderna.</p>
+                            <a href="#" class="initiative-link">Se kommande Tech Talks <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="initiative-card">
+                        <div class="initiative-image">
+                            <img src="img/hackaton.png" alt="Hackathon" width="500" height="250">
+                        </div>
+                        <div class="initiative-content">
+                            <h3>Gibon Hackathon</h3>
+                            <p>Två gånger per år arrangerar vi hackathons där du får möjlighet att experimentera med nya tekniker och idéer. Många av våra innovativa lösningar och interna verktyg har faktiskt fått sin start under dessa kreativa dagar.</p>
+                            <a href="#" class="initiative-link">Utforska tidigare hackathon-projekt <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="initiative-card">
+                        <div class="initiative-image">
+                            <img src="img/sociala-sammanhang.png" alt="Sociala aktiviteter" width="500" height="250">
+                        </div>
+                        <div class="initiative-content">
+                            <h3>Sociala aktiviteter</h3>
+                            <p>Hos Gibon handlar det inte bara om arbete! Vi har en aktiv social kalender med allt från after works och sportaktiviteter till teamresor och familjeevenemang. Dessa aktiviteter stärker vår sammanhållning.</p>
+                            <a href="#" class="initiative-link">Se våra senaste aktiviteter <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spontanansökan -->
+        <section class="open-application-section">
+            <div class="container">
+                <h2 class="section-title">Spontanansökan</h2>
+                <p class="text-center">Hittar du ingen ledig tjänst som passar din profil? Vi tar gärna emot spontanansökningar från talangfulla personer som vill bli en del av Gibon-teamet.</p>
+                
+                <div class="application-form">
+                    <form id="spontan-form" action="#" method="post">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name" class="form-label">Förnamn *</label>
+                                <input type="text" id="first-name" name="first-name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name" class="form-label">Efternamn *</label>
+                                <input type="text" id="last-name" name="last-name" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email" class="form-label">E-post *</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Telefon</label>
+                                <input type="tel" id="phone" name="phone" class="form-control">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="position" class="form-label">Vilken typ av tjänst är du intresserad av? *</label>
+                            <select id="position" name="position" class="form-control" required>
+                                <option value="">Välj ett alternativ</option>
+                                <option value="utvecklare">Utvecklare</option>
+                                <option value="projektledare">Projektledare</option>
+                                <option value="ux-designer">UX/UI Designer</option>
+                                <option value="devops">DevOps</option>
+                                <option value="it-drift">IT-drift</option>
+                                <option value="annat">Annat</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="office" class="form-label">Önskat kontor *</label>
+                            <select id="office" name="office" class="form-control" required>
+                                <option value="">Välj ett alternativ</option>
+                                <option value="stockholm">Stockholm</option>
+                                <option value="goteborg">Göteborg</option>
+                                <option value="malmo">Malmö</option>
+                                <option value="remote">Distans/Remote</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Personligt brev *</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">CV *</label>
+                            <div class="file-upload">
+                                <label for="cv-file" class="file-upload-label">
+                                    <i class="fas fa-upload"></i> Ladda upp ditt CV (PDF, DOC, DOCX)
+                                </label>
+                                <input type="file" id="cv-file" name="cv-file" accept=".pdf,.doc,.docx" required>
+                                <div id="file-name" class="file-name"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input type="checkbox" id="consent" name="consent" class="form-check-input" required>
+                                <label for="consent" class="form-check-label">Jag godkänner att Gibon behandlar mina personuppgifter i enlighet med <a href="integritetspolicy.html">integritetspolicyn</a> *</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-submit">
+                            <button type="submit" class="btn-primary">Skicka in ansökan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Har du frågor om att jobba hos oss?</h2>
+                    <p>Kontakta gärna vår HR-chef Linda Karlsson för mer information om karriärmöjligheter hos Gibon.</p>
+                    <a href="mailto:linda.karlsson@gibon.se" class="btn btn-primary">Kontakta HR</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-widgets">
+                <div class="footer-widget">
+                    <div class="footer-logo">
+                        <img src="img/logo.svg.png" alt="Gibon" width="120" height="40">
+                    </div>
+                    <p>Vi hjälper företag att förenkla sin vardag med modern teknik och smarta lösningar.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/gibon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/gibon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/gibon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Tjänster</h3>
+                    <ul class="footer-menu">
+                        <li><a href="tjanster/digital-arbetsplats.html">Digital arbetsplats</a></li>
+                        <li><a href="tjanster/webbutveckling.html">Webbutveckling</a></li>
+                        <li><a href="tjanster/it-drift.html">IT-drift</a></li>
+                        <li><a href="tjanster.html">Alla tjänster</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Om Gibon</h3>
+                    <ul class="footer-menu">
+                        <li><a href="om-oss.html">Om oss</a></li>
+                        <li><a href="kontor.html">Våra kontor</a></li>
+                        <li><a href="karriar.html">Karriär</a></li>
+                        <li><a href="hallbarhet.html">Hållbarhet</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Kontakt &amp; Support</h3>
+                    <ul class="footer-menu">
+                        <li><a href="kontakt.html">Kontakta oss</a></li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="faq.html">Vanliga frågor</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2024 Gibon. Alla rättigheter förbehållna.
+                </div>
+                <div class="footer-links">
+                    <a href="integritetspolicy.html">Integritetspolicy</a>
+                    <a href="cookiepolicy.html">Cookiepolicy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cookie-consent.js"></script>
+    <script>
+        // Filuppladdning - visa filnamn
+        document.getElementById('cv-file').addEventListener('change', function() {
+            const fileName = this.files[0].name;
+            document.getElementById('file-name').textContent = fileName;
+        });
+
+        // Enkelt filtreringssystem för jobbkort
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Ta bort active-klassen från alla knappar
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Lägg till active-klassen på den klickade knappen
+                this.classList.add('active');
+                
+                // Här skulle logiken för att filtrera jobb komma i en verklig implementation
+                // För denna demo så gör vi ingenting mer än att visa den aktiva knappen
+            });
+        });
+    </script>
+</body>
+</html> 

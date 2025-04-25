@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gibon arbetar aktivt med hållbarhet. Läs om vårt miljöarbete, sociala ansvar och våra långsiktiga hållbarhetsmål.">
+    <title>Hållbarhet | Gibon</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Schema.org strukturerad data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Gibon",
+      "url": "https://gibon.se",
+      "logo": "https://gibon.se/img/logo.svg",
+      "description": "Gibon är ett ledande IT-företag som erbjuder tjänster inom digital arbetsplats, webbutveckling och IT-drift.",
+      "foundingDate": "2012",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sveavägen 100",
+        "addressLocality": "Stockholm",
+        "postalCode": "113 50",
+        "addressCountry": "SE"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+46-8-123456",
+        "contactType": "customer service"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/gibon",
+        "https://twitter.com/gibon",
+        "https://www.facebook.com/gibon"
+      ]
+    }
+    </script>
+    <style>
+    /* Stilar för hållbarhetssidan */
+    :root {
+        --primary-color: #2d50a7;
+        --secondary-color: #5372c4;
+        --accent-color: #ff6b35;
+        --light-gray: #f5f7fa;
+        --medium-gray: #e4e8ef;
+        --dark-gray: #4a4a4a;
+        --text-color: #333;
+        --border-radius: 8px;
+        --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        --transition: all 0.3s ease;
+        --green-color: #4caf50;
+        --blue-color: #2196f3;
+        --orange-color: #ff9800;
+    }
+    
+    body {
+        font-family: 'Roboto', sans-serif;
+        color: var(--text-color);
+        line-height: 1.6;
+        background-color: #fff;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Source Sans Pro', sans-serif;
+        margin-top: 0;
+        color: #222;
+    }
+
+    h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+    h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+
+    .section-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--accent-color);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    /* Page Header */
+    .page-header {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: white;
+        padding: 3rem 0;
+        text-align: center;
+    }
+
+    .page-header h1 {
+        margin: 0;
+        color: white;
+        font-weight: 700;
+        font-size: 2.8rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .breadcrumbs {
+        color: rgba(255, 255, 255, 0.85);
+        margin-top: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .breadcrumbs a {
+        color: white;
+        text-decoration: none;
+        transition: var(--transition);
+    }
+
+    .breadcrumbs a:hover {
+        text-decoration: underline;
+    }
+
+    /* Introduktion */
+    .sustainability-intro {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        margin: 2rem 0 4rem;
+    }
+
+    .sustainability-intro-content {
+        flex: 1;
+    }
+
+    .sustainability-intro-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .sustainability-intro-content p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: var(--dark-gray);
+    }
+
+    .sustainability-intro-image {
+        flex: 1;
+        max-width: 500px;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+    }
+
+    .sustainability-intro-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Fokusområden */
+    .focus-areas-section {
+        background-color: var(--light-gray);
+        padding: 5rem 0;
+    }
+
+    .focus-areas-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .focus-area-card {
+        background-color: white;
+        padding: 2.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        text-align: center;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .focus-area-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background-color: var(--primary-color);
+    }
+
+    .focus-area-card:nth-child(1)::before {
+        background-color: var(--green-color);
+    }
+
+    .focus-area-card:nth-child(2)::before {
+        background-color: var(--blue-color);
+    }
+
+    .focus-area-card:nth-child(3)::before {
+        background-color: var(--orange-color);
+    }
+
+    .focus-area-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .focus-area-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .focus-area-card:nth-child(1) .focus-area-icon {
+        color: var(--green-color);
+    }
+
+    .focus-area-card:nth-child(2) .focus-area-icon {
+        color: var(--blue-color);
+    }
+
+    .focus-area-card:nth-child(3) .focus-area-icon {
+        color: var(--orange-color);
+    }
+
+    .focus-area-card h3 {
+        margin-bottom: 1rem;
+    }
+
+    .focus-area-card p {
+        color: var(--dark-gray);
+    }
+
+    /* Hållbarhetsmål */
+    .goals-section {
+        padding: 5rem 0;
+    }
+
+    .goal-container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .goal-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 3rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid var(--medium-gray);
+    }
+
+    .goal-item:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .goal-icon {
+        flex: 0 0 80px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 2rem;
+        font-size: 2rem;
+        color: white;
+    }
+
+    .goal-icon:nth-child(1) {
+        background-color: var(--green-color);
+    }
+
+    .goal-item:nth-child(2) .goal-icon {
+        background-color: var(--blue-color);
+    }
+
+    .goal-item:nth-child(3) .goal-icon {
+        background-color: var(--accent-color);
+    }
+
+    .goal-item:nth-child(4) .goal-icon {
+        background-color: var(--primary-color);
+    }
+
+    .goal-content {
+        flex: 1;
+    }
+
+    .goal-content h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .goal-content p {
+        margin-bottom: 1.5rem;
+    }
+
+    .progress-container {
+        background-color: var(--light-gray);
+        border-radius: 50px;
+        height: 10px;
+        width: 100%;
+        margin: 1.5rem 0;
+    }
+
+    .progress-bar {
+        height: 10px;
+        border-radius: 50px;
+        background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    }
+
+    .progress-info {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+        color: var(--dark-gray);
+    }
+
+    /* Initiatives */
+    .initiatives-section {
+        background-color: var(--light-gray);
+        padding: 5rem 0;
+    }
+
+    .initiatives-tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3rem;
+        border-bottom: 1px solid var(--medium-gray);
+        padding-bottom: 1rem;
+    }
+
+    .initiative-tab {
+        padding: 1rem 2rem;
+        margin: 0 0.5rem;
+        cursor: pointer;
+        font-weight: 600;
+        color: var(--dark-gray);
+        border-bottom: 3px solid transparent;
+        transition: var(--transition);
+    }
+
+    .initiative-tab.active {
+        color: var(--primary-color);
+        border-bottom-color: var(--primary-color);
+    }
+
+    .initiative-tab:hover {
+        color: var(--primary-color);
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    .initiative-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2rem;
+    }
+
+    .initiative-card {
+        background-color: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+    }
+
+    .initiative-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .initiative-image {
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .initiative-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .initiative-card:hover .initiative-image img {
+        transform: scale(1.05);
+    }
+
+    .initiative-content {
+        padding: 2rem;
+    }
+
+    .initiative-content h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .initiative-content p {
+        margin-bottom: 1.5rem;
+    }
+
+    .initiative-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--medium-gray);
+        font-size: 0.9rem;
+        color: var(--dark-gray);
+    }
+
+    .initiative-date {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .initiative-link {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+    }
+
+    .initiative-link:hover {
+        color: var(--accent-color);
+    }
+
+    /* Certifications */
+    .certifications-section {
+        padding: 5rem 0;
+        text-align: center;
+    }
+
+    .certifications-grid {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin-top: 3rem;
+    }
+
+    .certification-item {
+        flex: 0 0 200px;
+        text-align: center;
+    }
+
+    .certification-logo {
+        height: 100px;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .certification-logo img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .certification-name {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .certification-description {
+        font-size: 0.9rem;
+        color: var(--dark-gray);
+    }
+
+    /* Reports */
+    .reports-section {
+        background-color: var(--light-gray);
+        padding: 5rem 0;
+    }
+
+    .reports-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .report-card {
+        background-color: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .report-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .report-icon {
+        background-color: var(--primary-color);
+        color: white;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+    }
+
+    .report-content {
+        padding: 2rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .report-content h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .report-content p {
+        margin-bottom: 1.5rem;
+    }
+
+    .report-meta {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--medium-gray);
+        font-size: 0.9rem;
+    }
+
+    .report-date {
+        color: var(--dark-gray);
+    }
+
+    .report-download {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+    }
+
+    .report-download:hover {
+        color: var(--accent-color);
+    }
+
+    /* Partnerships */
+    .partnerships-section {
+        padding: 5rem 0;
+    }
+
+    .partnerships-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .partnership-card {
+        background-color: white;
+        padding: 2.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+        text-align: center;
+    }
+
+    .partnership-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .partnership-logo {
+        height: 80px;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .partnership-logo img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .partnership-card h3 {
+        margin-bottom: 1rem;
+    }
+
+    .partnership-card p {
+        color: var(--dark-gray);
+    }
+
+    /* CTA */
+    .cta-section {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: white;
+        text-align: center;
+        padding: 5rem 0;
+    }
+
+    .cta-content h2 {
+        color: white;
+        margin-bottom: 1.5rem;
+        font-size: 2.5rem;
+    }
+
+    .cta-content p {
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+
+    .cta-content .btn-primary {
+        background-color: var(--accent-color);
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+        display: inline-block;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        font-weight: 600;
+        text-align: center;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+        color: white;
+    }
+    
+    .cta-content .btn-primary:hover {
+        background-color: #e85a26;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 107, 53, 0.25);
+    }
+    </style>
+</head>
+<body class="page-hallbarhet">
+    <!-- Cookie-banner -->
+    <div id="cookie-consent" class="cookie-banner">
+        <div class="container">
+            <div class="cookie-content">
+                <h3>Cookies på gibon.se</h3>
+                <p>Vi använder cookies för att förbättra din upplevelse på vår webbplats. Genom att fortsätta använda webbplatsen godkänner du användningen av cookies.</p>
+                <div class="cookie-actions">
+                    <button id="accept-cookies" class="btn btn-primary">Acceptera alla</button>
+                    <button id="customize-cookies" class="btn btn-secondary">Anpassa inställningar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.svg.png" alt="Gibon Logotyp" width="120" height="40">
+                    </a>
+                </div>
+                <nav class="main-navigation">
+                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                        <span class="screen-reader-text">Meny</span>
+                        <span class="hamburger"></span>
+                    </button>
+                    <ul id="primary-menu" class="menu">
+                        <li class="menu-item"><a href="index.html">Hem</a></li>
+                        <li class="menu-item has-children">
+                            <a href="tjanster.html">Tjänster</a>
+                            <ul class="sub-menu">
+                                <li><a href="tjanster/digital-arbetsplats.html">Digital arbetsplats</a></li>
+                                <li><a href="tjanster/webbutveckling.html">Webbutveckling</a></li>
+                                <li><a href="tjanster/it-drift.html">IT-drift</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"><a href="om-oss.html">Om Gibon</a></li>
+                        <li class="menu-item"><a href="karriar.html">Karriär</a></li>
+                        <li class="menu-item current-menu-item"><a href="hallbarhet.html">Hållbarhet</a></li>
+                        <li class="menu-item"><a href="nyheter.html">Nyheter</a></li>
+                        <li class="menu-item"><a href="kontakt.html">Kontakt</a></li>
+                        <li class="menu-item highlight"><a href="support.html">Support</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidhuvud -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Hållbarhet</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Hem</a> / <span>Hållbarhet</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Huvudinnehåll -->
+    <main class="site-main">
+        <!-- Introduktion -->
+        <section class="section-intro">
+            <div class="container">
+                <div class="sustainability-intro">
+                    <div class="sustainability-intro-content">
+                        <h2>Vårt ansvar för en hållbar framtid</h2>
+                        <p>På Gibon ser vi hållbarhet som en integrerad del av vår affärsstrategi. Vi tar ansvar för vår påverkan på miljön, samhället och ekonomin, och strävar efter att göra positiv skillnad i allt vi gör.</p>
+                        <p>Vi tror på att teknologi kan vara en stark drivkraft för en mer hållbar värld. Genom våra tjänster hjälper vi våra kunder att minska sin miljöpåverkan, optimera sin resursanvändning och skapa hållbara digitala lösningar.</p>
+                        <p>Vår hållbarhetsstrategi är baserad på FN:s globala mål för hållbar utveckling, och vi arbetar kontinuerligt för att minska vårt eget klimatavtryck samtidigt som vi bidrar till en mer hållbar utveckling genom våra tjänster och partnerskap.</p>
+                    </div>
+                    <div class="sustainability-intro-image">
+                        <img src="img/hallbarhet.png" alt="Gibons hållbarhetsarbete" width="500" height="350">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fokusområden -->
+        <section class="focus-areas-section">
+            <div class="container">
+                <h2 class="section-title">Våra fokusområden</h2>
+                <div class="focus-areas-grid">
+                    <div class="focus-area-card">
+                        <div class="focus-area-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Miljömässig hållbarhet</h3>
+                        <p>Vi arbetar aktivt för att minska vår miljöpåverkan genom energieffektivisering, minskat resande och smarta digitala lösningar. Våra kontor är miljöcertifierade och vi ställer miljökrav på våra leverantörer.</p>
+                    </div>
+                    <div class="focus-area-card">
+                        <div class="focus-area-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Social hållbarhet</h3>
+                        <p>Vi främjar mångfald och inkludering både internt och externt. Genom vårt sociala engagemang stödjer vi utbildning och digital inkludering för en mer jämlik framtid. Vi värnar om våra medarbetares välmående och utveckling.</p>
+                    </div>
+                    <div class="focus-area-card">
+                        <div class="focus-area-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Ekonomisk hållbarhet</h3>
+                        <p>Vi bedriver vår verksamhet med ett långsiktigt perspektiv och god affärsetik. Genom ansvarsfulla investeringar, effektiv resursanvändning och innovation skapar vi hållbar tillväxt för oss och våra kunder.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hållbarhetsmål -->
+        <section class="goals-section">
+            <div class="container">
+                <h2 class="section-title">Våra hållbarhetsmål 2025</h2>
+                <div class="goal-container">
+                    <div class="goal-item">
+                        <div class="goal-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="goal-content">
+                            <h3>Klimatneutral verksamhet</h3>
+                            <p>Vi har som mål att vara klimatneutrala i vår egen verksamhet senast 2025. Detta innebär att vi arbetar systematiskt med att minska vårt koldioxidavtryck genom energieffektivisering, förnybar energi och minskade resor.</p>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 75%"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span>Startpunkt 2020</span>
+                                <span>75% genomfört</span>
+                                <span>Mål 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="goal-item">
+                        <div class="goal-icon">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <div class="goal-content">
+                            <h3>100% cirkulär IT-hantering</h3>
+                            <p>Vi strävar efter 100% cirkulär hantering av vår IT-utrustning, vilket innebär att all utrustning återanvänds, återvinns eller renoveras. Genom samarbete med specialiserade partners förlänger vi livslängden på vår teknik.</p>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 60%"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span>Startpunkt 2020</span>
+                                <span>60% genomfört</span>
+                                <span>Mål 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="goal-item">
+                        <div class="goal-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="goal-content">
+                            <h3>Digital utbildning för 10,000 unga</h3>
+                            <p>Vi vill bidra till en mer inkluderande digital framtid genom att ge 10,000 unga människor tillgång till digital utbildning genom våra volontärprogram, praktikplatser och samarbeten med skolor och ideella organisationer.</p>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 40%"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span>Startpunkt 2020</span>
+                                <span>40% genomfört</span>
+                                <span>Mål 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="goal-item">
+                        <div class="goal-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="goal-content">
+                            <h3>50/50 könsfördelning i ledande positioner</h3>
+                            <p>Vi arbetar aktivt för en jämn könsfördelning i hela företaget, med ett specifikt mål om 50/50 fördelning i ledande positioner senast 2025. Detta gör vi genom riktade rekryteringsinsatser, mentorprogram och en inkluderande företagskultur.</p>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 68%"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span>Startpunkt 2020</span>
+                                <span>68% genomfört</span>
+                                <span>Mål 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Initiativ -->
+        <section class="initiatives-section">
+            <div class="container">
+                <h2 class="section-title">Våra hållbarhetsinitiativ</h2>
+                
+                <div class="initiatives-tabs">
+                    <div class="initiative-tab active" data-tab="miljö">Miljö</div>
+                    <div class="initiative-tab" data-tab="socialt">Socialt</div>
+                    <div class="initiative-tab" data-tab="ekonomi">Ekonomi</div>
+                </div>
+                
+                <div class="tab-content active" id="miljö">
+                    <div class="initiative-cards">
+                        <div class="initiative-card">
+                            <div class="initiative-image">
+                                <img src="img/green_office.png" alt="Gröna kontor" width="350" height="200">
+                            </div>
+                            <div class="initiative-content">
+                                <h3>Gröna kontor</h3>
+                                <p>Våra kontor är miljöcertifierade och utformade för att minimera energiförbrukning. Vi använder förnybar energi, smart belysning och har implementerat effektiva återvinningssystem.</p>
+                                <div class="initiative-meta">
+                                    <div class="initiative-date">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span>Pågående sedan 2018</span>
+                                    </div>
+                                    <a href="#" class="initiative-link">Läs mer <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="initiative-card">
+                            <div class="initiative-image">
+                                <img src="img/hallbart_resande.png" alt="Hållbart resande" width="350" height="200">
+                            </div>
+                            <div class="initiative-content">
+                                <h3>Hållbart resande</h3>
+                                <p>Vi uppmuntrar våra medarbetare att välja hållbara transportalternativ genom cykelförmåner, kollektivtrafikbidrag och en policy som prioriterar digitala möten framför resor.</p>
+                                <div class="initiative-meta">
+                                    <div class="initiative-date">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span>Implementerat 2019</span>
+                                    </div>
+                                    <a href="#" class="initiative-link">Läs mer <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="initiative-card">
+                            <div class="initiative-image">
+                                <img src="img/cirkular.png" alt="Hantering av elektroniskt avfall" width="350" height="200">
+                            </div>
+                            <div class="initiative-content">
+                                <h3>Cirkulär IT-hantering</h3>
+                                <p>Vi tillämpar en cirkulär modell för vår IT-utrustning där alla enheter antingen återanvänds, doneras till välgörande ändamål eller återvinns ansvarsfullt genom certifierade partners.</p>
+                                <div class="initiative-meta">
+                                    <div class="initiative-date">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span>Startat 2020</span>
+                                    </div>
+                                    <a href="#" class="initiative-link">Läs mer <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="socialt">
+                    <div class="initiative-cards">
+                        <div class="initiative-card">
+                            <div class="initiative-image">
+                                <img src="img/Gibon-code-club.png" alt="Code Club" width="350" height="200">
+                            </div>
+                            <div class="initiative-content">
+                                <h3>Gibon Code Club</h3>
+                                <p>Genom Gibon Code Club erbjuder våra volontärer kostnadsfria programmeringskurser för barn och ungdomar i socioekonomiskt utsatta områden, med syfte att minska den digitala klyftan.</p>
+                                <div class="initiative-meta">
+                                    <div class="initiative-date">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span>Startat 2019</span>
+                                    </div>
+                                    <a href="#" class="initiative-link">Läs mer <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="initiative-card">
+                            <div class="initiative-image">
+                                <img src="img/sofia_bergstrom.png" alt="Women in Tech" width="350" height="200">
+                            </div>
+                            <div class="initiative-content">
+                                <h3>Women in Tech</h3>
+                                <p>Vi driver ett mentorskapsprogram för kvinnor i IT-branschen och anordnar regelbundna evenemang för att inspirera och stödja kvinnor som vill göra karriär inom teknikområdet.</p>
+                                <div class="initiative-meta">
+                                    <div class="initiative-date">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span>Etablerat 2018</span>
+                                    </div>
+                                    <a href="#" class="initiative-link">Läs mer <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="initiative-card">
+                            <div class="initiative-image">
+                                <img src="img/digital-wrokspace-hero.png" alt="Digital tillgänglighet" width="350" height="200">
+                            </div>
+                            <div class="initiative-content">
+                                <h3>Tillgängliga digitala lösningar</h3>
+                                <p>Vi arbetar aktivt med att säkerställa att alla digitala lösningar vi utvecklar är tillgängliga för personer med funktionsnedsättningar, och erbjuder utbildningar i digital tillgänglighet.</p>
+                                <div class="initiative-meta">
+                                    <div class="initiative-date">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span>Pågående</span>
+                                    </div>
+                                    <a href="#" class="initiative-link">Läs mer <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="ekonomi">
+                    <div class="initiative-cards">
+                        <div class="initiative-card">
+                            <div class="initiative-image">
+                                <img src="img/molnbaserade_losningar.jpg.png" alt="Hållbara inköp" width="350" height="200">
+                            </div>
+                            <div class="initiative-content">
+                                <h3>Hållbar leverantörskedja</h3>
+                                <p>Vi har implementerat en hållbarhetspolicy för inköp där vi ställer tydliga krav på våra leverantörer gällande miljö, arbetsvillkor och etik, med regelbunden uppföljning.</p>
+                                <div class="initiative-meta">
+                                    <div class="initiative-date">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span>Implementerat 2021</span>
+                                    </div>
+                                    <a href="#" class="initiative-link">Läs mer <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="initiative-card">
+                            <div class="initiative-image">
+                                <img src="img/naturskydd.png" alt="Innovation" width="350" height="200">
+                            </div>
+                            <div class="initiative-content">
+                                <h3>Innovationsfond</h3>
+                                <p>Vår innovationsfond investerar i utvecklingen av nya hållbara IT-lösningar som kan bidra till minskad miljöpåverkan och ökad resurseffektivitet hos våra kunder och i samhället i stort.</p>
+                                <div class="initiative-meta">
+                                    <div class="initiative-date">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span>Etablerad 2022</span>
+                                    </div>
+                                    <a href="#" class="initiative-link">Läs mer <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="initiative-card">
+                            <div class="initiative-image">
+                                <img src="img/cool-ass-turtle.png" alt="Transparens" width="350" height="200">
+                            </div>
+                            <div class="initiative-content">
+                                <h3>Transparens och rapportering</h3>
+                                <p>Vi publicerar årligen en omfattande hållbarhetsrapport och arbetar kontinuerligt med att utveckla vår rapportering enligt internationella standarder för ökad transparens.</p>
+                                <div class="initiative-meta">
+                                    <div class="initiative-date">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span>Årligen sedan 2019</span>
+                                    </div>
+                                    <a href="#" class="initiative-link">Läs mer <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifieringar -->
+        <section class="certifications-section">
+            <div class="container">
+                <h2 class="section-title">Våra certifieringar och åtaganden</h2>
+                <p>Vi är stolta över våra certifieringar och åtaganden som visar vårt engagemang för hållbarhet:</p>
+                
+                <div class="certifications-grid">
+                    <div class="certification-item">
+                        <div class="certification-logo">
+                            <img src="img/iso-140.png" alt="ISO 14001" width="150" height="100">
+                        </div>
+                        <div class="certification-name">ISO 14001</div>
+                        <div class="certification-description">Certifierade sedan 2018 för vårt miljöledningssystem</div>
+                    </div>
+                    
+                    <div class="certification-item">
+                        <div class="certification-logo">
+                            <img src="img/iso-90.png" alt="ISO 9001" width="150" height="100">
+                        </div>
+                        <div class="certification-name">ISO 9001</div>
+                        <div class="certification-description">Certifierade för vårt kvalitetsledningssystem</div>
+                    </div>
+                    
+                    <div class="certification-item">
+                        <div class="certification-logo">
+                            <img src="img/un-global.png" alt="UN Global Compact" width="150" height="100">
+                        </div>
+                        <div class="certification-name">UN Global Compact</div>
+                        <div class="certification-description">Medlemmar sedan 2019</div>
+                    </div>
+                    
+                    <div class="certification-item">
+                        <div class="certification-logo">
+                            <img src="img/science-based.png" alt="Science Based Targets" width="150" height="100">
+                        </div>
+                        <div class="certification-name">Science Based Targets</div>
+                        <div class="certification-description">Åtagande för klimatmål baserade på vetenskap</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rapporter -->
+        <section class="reports-section">
+            <div class="container">
+                <h2 class="section-title">Hållbarhetsrapporter</h2>
+                
+                <div class="reports-grid">
+                    <div class="report-card">
+                        <div class="report-icon">
+                            <i class="far fa-file-pdf"></i>
+                        </div>
+                        <div class="report-content">
+                            <h3>Hållbarhetsrapport 2023</h3>
+                            <p>Vår senaste hållbarhetsrapport med detaljerad information om vårt hållbarhetsarbete, framsteg mot våra mål och framtidsplaner.</p>
+                            <div class="report-meta">
+                                <span class="report-date">Publicerad: Mars 2024</span>
+                                <a href="#" class="report-download">
+                                    <i class="fas fa-download"></i> Ladda ner
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="report-card">
+                        <div class="report-icon">
+                            <i class="far fa-file-pdf"></i>
+                        </div>
+                        <div class="report-content">
+                            <h3>Koldioxidbokslut 2023</h3>
+                            <p>Detaljerad redovisning av vårt koldioxidavtryck med analys av utsläppskällor och genomförda åtgärder för att minska vår klimatpåverkan.</p>
+                            <div class="report-meta">
+                                <span class="report-date">Publicerad: Februari 2024</span>
+                                <a href="#" class="report-download">
+                                    <i class="fas fa-download"></i> Ladda ner
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="report-card">
+                        <div class="report-icon">
+                            <i class="far fa-file-pdf"></i>
+                        </div>
+                        <div class="report-content">
+                            <h3>Hållbarhetsrapport 2022</h3>
+                            <p>Tidigare års hållbarhetsrapport med information om vårt arbete och resultat inom miljömässig, social och ekonomisk hållbarhet.</p>
+                            <div class="report-meta">
+                                <span class="report-date">Publicerad: Mars 2023</span>
+                                <a href="#" class="report-download">
+                                    <i class="fas fa-download"></i> Ladda ner
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partnerskap -->
+        <section class="partnerships-section">
+            <div class="container">
+                <h2 class="section-title">Våra partnerskap för hållbarhet</h2>
+                
+                <div class="partnerships-grid">
+                    <div class="partnership-card">
+                        <div class="partnership-logo">
+                            <img src="img/naturskydd.png" alt="Naturskyddsföreningen" width="250" height="150">
+                        </div>
+                        <h3>Naturskyddsföreningen</h3>
+                        <p>Vi stödjer Naturskyddsföreningens arbete för miljö och klimat genom årliga bidrag och gemensamma projekt för att främja hållbar IT-användning.</p>
+                    </div>
+                    
+                    <div class="partnership-card">
+                        <div class="partnership-logo">
+                            <img src="img/teach-for-sweden.png" alt="Teach for Sweden" width="250" height="150">
+                        </div>
+                        <h3>Teach for Sweden</h3>
+                        <p>I samarbete med Teach for Sweden bidrar vi till att förbättra digital kompetens bland barn och ungdomar i socioekonomiskt utsatta områden.</p>
+                    </div>
+                    
+                    <div class="partnership-card">
+                        <div class="partnership-logo">
+                            <img src="img/fossilfritt.png" alt="Fossilfritt Sverige" width="250" height="150">
+                        </div>
+                        <h3>Fossilfritt Sverige</h3>
+                        <p>Som medlemmar i Fossilfritt Sverige har vi åtagit oss att vara en del av omställningen till ett fossilfritt samhälle genom konkreta åtgärder i vår verksamhet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Vill du veta mer om vårt hållbarhetsarbete?</h2>
+                    <p>Kontakta vår hållbarhetschef för mer information om hur vi arbetar med hållbarhet eller hur vi kan hjälpa ditt företag med hållbara IT-lösningar.</p>
+                    <a href="kontakt.html" class="btn btn-primary">Kontakta oss</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-widgets">
+                <div class="footer-widget">
+                    <div class="footer-logo">
+                        <img src="img/logo.svg.png" alt="Gibon" width="120" height="40">
+                    </div>
+                    <p>Vi hjälper företag att förenkla sin vardag med modern teknik och smarta lösningar.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/gibon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/gibon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/gibon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Tjänster</h3>
+                    <ul class="footer-menu">
+                        <li><a href="tjanster/digital-arbetsplats.html">Digital arbetsplats</a></li>
+                        <li><a href="tjanster/webbutveckling.html">Webbutveckling</a></li>
+                        <li><a href="tjanster/it-drift.html">IT-drift</a></li>
+                        <li><a href="tjanster.html">Alla tjänster</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Om Gibon</h3>
+                    <ul class="footer-menu">
+                        <li><a href="om-oss.html">Om oss</a></li>
+                        <li><a href="kontor.html">Våra kontor</a></li>
+                        <li><a href="karriar.html">Karriär</a></li>
+                        <li><a href="hallbarhet.html">Hållbarhet</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Kontakt &amp; Support</h3>
+                    <ul class="footer-menu">
+                        <li><a href="kontakt.html">Kontakta oss</a></li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="faq.html">Vanliga frågor</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2024 Gibon. Alla rättigheter förbehållna.
+                </div>
+                <div class="footer-links">
+                    <a href="integritetspolicy.html">Integritetspolicy</a>
+                    <a href="cookiepolicy.html">Cookiepolicy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cookie-consent.js"></script>
+    <script>
+        // Tab-funktion för initiativ
+        document.querySelectorAll('.initiative-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Ta bort active-klassen från alla tabs och innehåll
+                document.querySelectorAll('.initiative-tab').forEach(t => {
+                    t.classList.remove('active');
+                });
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Lägg till active-klass på den klickade tabben
+                this.classList.add('active');
+                
+                // Visa motsvarande innehåll
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

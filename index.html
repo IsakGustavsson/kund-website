@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gibon erbjuder tjänster inom IT, digital arbetsplats och webbutveckling">
+    <title>Gibon | Startsida</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Schema.org strukturerad data enligt Google's riktlinjer -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Gibon",
+      "url": "https://gibon.se",
+      "logo": "https://gibon.se/img/logo.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+46-8-123456",
+        "contactType": "customer service"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/gibon",
+        "https://twitter.com/gibon"
+      ]
+    }
+    </script>
+</head>
+<body class="home">
+    <!-- Cookie-banner -->
+    <div id="cookie-consent" class="cookie-banner">
+        <div class="container">
+            <div class="cookie-content">
+                <h3>Cookies på gibon.se</h3>
+                <p>Vi använder cookies för att förbättra din upplevelse på vår webbplats. Genom att fortsätta använda webbplatsen godkänner du användningen av cookies.</p>
+                <div class="cookie-actions">
+                    <button id="accept-cookies" class="btn btn-primary">Acceptera alla</button>
+                    <button id="customize-cookies" class="btn btn-secondary">Anpassa inställningar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.svg.png" alt="Gibon Logotyp" width="120" height="40">
+                    </a>
+                </div>
+                <nav class="main-navigation">
+                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                        <span class="screen-reader-text">Meny</span>
+                        <span class="hamburger"></span>
+                    </button>
+                    <ul id="primary-menu" class="menu">
+                        <li class="menu-item current-menu-item"><a href="index.html">Hem</a></li>
+                        <li class="menu-item has-children">
+                            <a href="tjanster.html">Tjänster</a>
+                            <ul class="sub-menu">
+                                <li><a href="tjanster/digital-arbetsplats.html">Digital arbetsplats</a></li>
+                                <li><a href="tjanster/webbutveckling.html">Webbutveckling</a></li>
+                                <li><a href="tjanster/it-drift.html">IT-drift</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"><a href="om-oss.html">Om Gibon</a></li>
+                        <li class="menu-item"><a href="karriar.html">Karriär</a></li>
+                        <li class="menu-item"><a href="hallbarhet.html">Hållbarhet</a></li>
+                        <li class="menu-item"><a href="nyheter.html">Nyheter</a></li>
+                        <li class="menu-item"><a href="kontakt.html">Kontakt</a></li>
+                        <li class="menu-item highlight"><a href="support.html">Support</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Vi hjälper ditt företag att lyckas i den digitala världen</h1>
+                <p class="hero-subtitle">Med vår expertis inom IT, digital arbetsplats och webbutveckling skapar vi lösningar som gör skillnad.</p>
+                <div class="hero-cta">
+                    <a href="kontakt.html" class="btn btn-primary">Kontakta oss</a>
+                    <a href="tjanster.html" class="btn btn-outline">Upptäck våra tjänster</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="img/hero-image.jpg.png" alt="Digital arbetsplats" width="1400" height="800">
+        </div>
+    </section>
+
+    <!-- Tjänsteområden -->
+    <section class="services-overview">
+        <div class="container">
+            <h2 class="section-title">Våra tjänsteområden</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Digital arbetsplats</h3>
+                    <p>Vi hjälper er att skapa en modern och effektiv digital arbetsplats.</p>
+                    <a href="tjanster/digital-arbetsplats.html" class="read-more">Läs mer <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Webbutveckling</h3>
+                    <p>Skräddarsydda webbplatser och applikationer för era specifika behov.</p>
+                    <a href="tjanster/webbutveckling.html" class="read-more">Läs mer <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>IT-drift</h3>
+                    <p>Säker och stabil drift av er IT-miljö med proaktiv övervakning.</p>
+                    <a href="tjanster/it-drift.html" class="read-more">Läs mer <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nyhetsflöde -->
+    <section class="news-feed">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Senaste nytt</h2>
+                <a href="nyheter.html" class="view-all">Se alla nyheter</a>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <a href="nyheter/ny-kontorschef-stockholm.html" class="news-image">
+                        <img src="img/news-1.jpg.png" alt="Ny kontorschef i Stockholm" width="400" height="225">
+                    </a>
+                    <div class="news-content">
+                        <span class="news-date">24 april 2024</span>
+                        <h3><a href="nyheter/ny-kontorschef-stockholm.html">Ny kontorschef till vårt Stockholmskontor</a></h3>
+                        <p>Vi välkomnar Anna Svensson som ny kontorschef för vårt växande team i Stockholm.</p>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <a href="nyheter/webbinar-digital-arbetsplats.html" class="news-image">
+                        <img src="img/news-2.png.png" alt="Webbinar om digital arbetsplats" width="400" height="225">
+                    </a>
+                    <div class="news-content">
+                        <span class="news-date">18 april 2024</span>
+                        <h3><a href="nyheter/webbinar-digital-arbetsplats.html">Webbinar: Framtidens digitala arbetsplats</a></h3>
+                        <p>Anmäl dig till vårt kommande webbinar där vi diskuterar trender och utmaningar för morgondagens digitala arbetsplats.</p>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <a href="nyheter/ny-kund-energibolag.html" class="news-image">
+                        <img src="img/new-3.png" alt="Nytt samarbete med energibolag" width="400" height="225">
+                    </a>
+                    <div class="news-content">
+                        <span class="news-date">10 april 2024</span>
+                        <h3><a href="nyheter/ny-kund-energibolag.html">Nytt samarbete med ledande energibolag</a></h3>
+                        <p>Vi är glada att meddela att vi inlett ett strategiskt samarbete med ett av Sveriges ledande energibolag.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kundcase -->
+    <section class="case-studies">
+        <div class="container">
+            <h2 class="section-title">Kundcase</h2>
+            <div class="case-slider">
+                <div class="case-card">
+                    <div class="case-image">
+                        <img src="img/case-1.jpg.png" alt="Kundcase: Företag A" width="600" height="400">
+                    </div>
+                    <div class="case-content">
+                        <h3>Företag A: Digital transformation</h3>
+                        <p>Vi hjälpte Företag A att modernisera sin IT-infrastruktur och implementera en molnbaserad lösning för hela organisationen.</p>
+                        <a href="case/foretag-a.html" class="btn btn-outline">Läs kundcaset</a>
+                    </div>
+                </div>
+                <div class="case-navigation">
+                    <button class="case-prev" aria-label="Föregående kundcase"><i class="fas fa-chevron-left"></i></button>
+                    <div class="case-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="case-next" aria-label="Nästa kundcase"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lediga tjänster -->
+    <section class="job-listings">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Lediga tjänster</h2>
+                <a href="karriar.html" class="view-all">Se alla tjänster</a>
+            </div>
+            <div class="jobs-grid">
+                <div class="job-card">
+                    <div class="job-content">
+                        <h3>Webbutvecklare</h3>
+                        <p class="job-location">Stockholm</p>
+                        <p>Vi söker en erfaren webbutvecklare som vill vara med och skapa användbara och tillgängliga webblösningar.</p>
+                    </div>
+                    <a href="karriar/webbutvecklare.html" class="btn btn-outline">Läs mer</a>
+                </div>
+                <div class="job-card">
+                    <div class="job-content">
+                        <h3>IT-tekniker</h3>
+                        <p class="job-location">Göteborg</p>
+                        <p>Till vårt kontor i Göteborg söker vi en serviceinriktad IT-tekniker med intresse för molntjänster.</p>
+                    </div>
+                    <a href="karriar/it-tekniker.html" class="btn btn-outline">Läs mer</a>
+                </div>
+                <div class="job-card">
+                    <div class="job-content">
+                        <h3>Projektledare</h3>
+                        <p class="job-location">Malmö</p>
+                        <p>Vi letar efter en driven projektledare med erfarenhet av att leda digitala transformationsprojekt.</p>
+                    </div>
+                    <a href="karriar/projektledare.html" class="btn btn-outline">Läs mer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontor -->
+    <section class="offices">
+        <div class="container">
+            <h2 class="section-title">Våra kontor</h2>
+            <div class="offices-grid">
+                <div class="office-card">
+                    <div class="office-image">
+                        <img src="img/office-stockholm.jpg.png" alt="Gibon kontor i Stockholm" width="400" height="300">
+                    </div>
+                    <div class="office-content">
+                        <h3>Stockholm</h3>
+                        <address>
+                            <p>Sveavägen 100<br>113 50 Stockholm</p>
+                            <p>Tel: 08-123 45 67<br>E-post: stockholm@gibon.se</p>
+                        </address>
+                        <a href="https://www.google.com/maps/place/Sveavägen+100,+113+50+Stockholm" target="_blank" class="read-more">Mer information <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="office-card">
+                    <div class="office-image">
+                        <img src="img/office-goteborg.png.png" alt="Gibon kontor i Göteborg" width="400" height="300">
+                    </div>
+                    <div class="office-content">
+                        <h3>Göteborg</h3>
+                        <address>
+                            <p>Avenyn 50<br>411 38 Göteborg</p>
+                            <p>Tel: 031-123 45 67<br>E-post: goteborg@gibon.se</p>
+                        </address>
+                        <a href="https://www.google.com/maps/place/Area+51/@37.24804,-115.800155,13z" target="_blank" class="read-more">Mer information <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="office-card">
+                    <div class="office-image">
+                        <img src="img/office-malmo.jpg.png" alt="Gibon kontor i Malmö" width="400" height="300">
+                    </div>
+                    <div class="office-content">
+                        <h3>Malmö</h3>
+                        <address>
+                            <p>Stortorget 10<br>211 22 Malmö</p>
+                            <p>Tel: 040-123 45 67<br>E-post: malmo@gibon.se</p>
+                        </address>
+                        <a href="https://www.google.com/maps/@40.2526111,58.4397512,181m/data=!3m1!1e3" target="_blank" class="read-more">Mer information <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Redo att ta nästa steg?</h2>
+                <p>Kontakta oss för en förutsättningslös diskussion om hur vi kan hjälpa just ditt företag.</p>
+                <a href="kontakt.html" class="btn btn-primary">Kontakta oss</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-widgets">
+                <div class="footer-widget">
+                    <div class="footer-logo">
+                        <img src="img/logo.svg.png" alt="Gibon" width="120" height="40">
+                    </div>
+                    <p>Vi hjälper företag att förenkla sin vardag med modern teknik och smarta lösningar.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/gibon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/gibon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/gibon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Tjänster</h3>
+                    <ul class="footer-menu">
+                        <li><a href="tjanster/digital-arbetsplats.html">Digital arbetsplats</a></li>
+                        <li><a href="tjanster/webbutveckling.html">Webbutveckling</a></li>
+                        <li><a href="tjanster/it-drift.html">IT-drift</a></li>
+                        <li><a href="tjanster.html">Alla tjänster</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Om Gibon</h3>
+                    <ul class="footer-menu">
+                        <li><a href="om-oss.html">Om oss</a></li>
+                        <li><a href="kontor.html">Våra kontor</a></li>
+                        <li><a href="karriar.html">Karriär</a></li>
+                        <li><a href="hallbarhet.html">Hållbarhet</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Kontakt &amp; Support</h3>
+                    <ul class="footer-menu">
+                        <li><a href="kontakt.html">Kontakta oss</a></li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="faq.html">Vanliga frågor</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2024 Gibon. Alla rättigheter förbehållna.
+                </div>
+                <div class="footer-links">
+                    <a href="integritetspolicy.html">Integritetspolicy</a>
+                    <a href="cookiepolicy.html">Cookiepolicy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cookie-consent.js"></script>
+</body>
+</html>

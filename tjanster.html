@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kund AB erbjuder tjänster inom IT, digital arbetsplats och webbutveckling. Upptäck vårt kompletta utbud av tjänster för företag.">
+    <title>Tjänster | Kund AB</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Schema.org strukturerad data enligt Google's riktlinjer -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Kund AB",
+      "url": "https://kund.se",
+      "logo": "https://kund.se/img/logo.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+46-8-123456",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+</head>
+<body class="page-tjanster">
+    <!-- Cookie-banner -->
+    <div id="cookie-consent" class="cookie-banner">
+        <div class="container">
+            <div class="cookie-content">
+                <h3>Cookies på kund.se</h3>
+                <p>Vi använder cookies för att förbättra din upplevelse på vår webbplats. Genom att fortsätta använda webbplatsen godkänner du användningen av cookies.</p>
+                <div class="cookie-actions">
+                    <button id="accept-cookies" class="btn btn-primary">Acceptera alla</button>
+                    <button id="customize-cookies" class="btn btn-secondary">Anpassa inställningar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.svg" alt="Kund AB Logotyp" width="120" height="40">
+                    </a>
+                </div>
+                <nav class="main-navigation">
+                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                        <span class="screen-reader-text">Meny</span>
+                        <span class="hamburger"></span>
+                    </button>
+                    <ul id="primary-menu" class="menu">
+                        <li class="menu-item"><a href="index.html">Hem</a></li>
+                        <li class="menu-item current-menu-item has-children">
+                            <a href="tjanster.html">Tjänster</a>
+                            <ul class="sub-menu">
+                                <li><a href="tjanster/digital-arbetsplats.html">Digital arbetsplats</a></li>
+                                <li><a href="tjanster/webbutveckling.html">Webbutveckling</a></li>
+                                <li><a href="tjanster/it-drift.html">IT-drift</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"><a href="om-oss.html">Om Kund</a></li>
+                        <li class="menu-item"><a href="karriar.html">Karriär</a></li>
+                        <li class="menu-item"><a href="hallbarhet.html">Hållbarhet</a></li>
+                        <li class="menu-item"><a href="nyheter.html">Nyheter</a></li>
+                        <li class="menu-item"><a href="kontakt.html">Kontakt</a></li>
+                        <li class="menu-item highlight"><a href="support.html">Support</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidhuvud -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Våra tjänster</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Hem</a> / <span>Tjänster</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Huvudinnehåll -->
+    <main class="site-main">
+        <!-- Introduktion -->
+        <section class="section-intro">
+            <div class="container">
+                <div class="intro-content">
+                    <h2>Vi hjälper ditt företag med den digitala resan</h2>
+                    <p>Kund AB erbjuder ett komplett utbud av IT-tjänster för att hjälpa ditt företag att växa och utvecklas. Oavsett om du behöver hjälp med digital arbetsplats, webbutveckling eller driftsäker IT-infrastruktur har vi lösningarna som passar just dina behov.</p>
+                    <p>Med över 15 års erfarenhet och ett team av certifierade experter hjälper vi dig att navigera den digitala landskapet och hitta de lösningar som skapar mest värde för just din verksamhet.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tjänsteområden -->
+        <section class="services-categories">
+            <div class="container">
+                <h2 class="section-title">Våra tjänsteområden</h2>
+                <div class="services-grid">
+                    <div class="service-area">
+                        <div class="service-area-image">
+                            <img src="img/digital-arbetsplats.jpg" alt="Digital arbetsplats" width="600" height="400">
+                        </div>
+                        <div class="service-area-content">
+                            <h3>Digital arbetsplats</h3>
+                            <p>Framtidens arbetsplats är digital, flexibel och säker. Vi hjälper er att implementera moderna verktyg som Microsoft 365, Teams och SharePoint för att skapa en digital arbetsplats som ökar produktiviteten och samarbetet.</p>
+                            <ul class="service-features">
+                                <li>Microsoft 365-implementation</li>
+                                <li>Samarbetsplattformar</li>
+                                <li>Digital kommunikation</li>
+                                <li>Säker informationshantering</li>
+                            </ul>
+                            <a href="tjanster/digital-arbetsplats.html" class="btn btn-primary">Läs mer</a>
+                        </div>
+                    </div>
+
+                    <div class="service-area">
+                        <div class="service-area-image">
+                            <img src="img/webbutveckling.jpg" alt="Webbutveckling" width="600" height="400">
+                        </div>
+                        <div class="service-area-content">
+                            <h3>Webbutveckling</h3>
+                            <p>Vi utvecklar responsiva och användarcentrerade webbplatser som stärker ert varumärke och skapar värde för era besökare. Med fokus på tillgänglighet, prestanda och konvertering bygger vi lösningar som hjälper er att nå era mål.</p>
+                            <ul class="service-features">
+                                <li>Företagswebbplatser</li>
+                                <li>Webbapplikationer</li>
+                                <li>E-handel</li>
+                                <li>UX-design och användarforskning</li>
+                            </ul>
+                            <a href="tjanster/webbutveckling.html" class="btn btn-primary">Läs mer</a>
+                        </div>
+                    </div>
+
+                    <div class="service-area">
+                        <div class="service-area-image">
+                            <img src="img/it-drift.jpg" alt="IT-drift" width="600" height="400">
+                        </div>
+                        <div class="service-area-content">
+                            <h3>IT-drift</h3>
+                            <p>Vår IT-drifttjänst ger er en stabil och säker IT-miljö med minimal nedetid. Vi tar ansvar för övervakning, underhåll och support så att ni kan fokusera på er kärnverksamhet.</p>
+                            <ul class="service-features">
+                                <li>Molnbaserade lösningar</li>
+                                <li>Proaktiv övervakning</li>
+                                <li>IT-säkerhet</li>
+                                <li>Helpdesk och support</li>
+                            </ul>
+                            <a href="tjanster/it-drift.html" class="btn btn-primary">Läs mer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nyhetsflöde -->
+        <section class="related-news">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Nyheter inom våra tjänsteområden</h2>
+                    <a href="nyheter.html" class="view-all">Se alla nyheter</a>
+                </div>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <a href="nyheter/ny-kund-energibolag.html" class="news-image">
+                            <img src="img/news-3.jpg" alt="Nytt samarbete med energibolag" width="400" height="225">
+                        </a>
+                        <div class="news-content">
+                            <span class="news-date">10 april 2024</span>
+                            <h3><a href="nyheter/ny-kund-energibolag.html">Nytt samarbete med ledande energibolag</a></h3>
+                            <p>Vi är glada att meddela att vi inlett ett strategiskt samarbete med ett av Sveriges ledande energibolag.</p>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <a href="nyheter/nya-digitala-verktyg.html" class="news-image">
+                            <img src="img/news-4.jpg" alt="Nya digitala verktyg för distansarbete" width="400" height="225">
+                        </a>
+                        <div class="news-content">
+                            <span class="news-date">2 april 2024</span>
+                            <h3><a href="nyheter/nya-digitala-verktyg.html">Nya digitala verktyg för effektivt distansarbete</a></h3>
+                            <p>Vi lanserar nya verktyg som hjälper företag att hantera hybridarbete och distansarbete på ett effektivt sätt.</p>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <a href="nyheter/webbseminarium-sakerhet.html" class="news-image">
+                            <img src="img/news-5.jpg" alt="Webbseminarium om säkerhet" width="400" height="225">
+                        </a>
+                        <div class="news-content">
+                            <span class="news-date">25 mars 2024</span>
+                            <h3><a href="nyheter/webbseminarium-sakerhet.html">Webbseminarium: Säkerhet i molnet</a></h3>
+                            <p>Delta i vårt kommande webbseminarium där vi går igenom de viktigaste aspekterna av säkerhet i molnbaserade lösningar.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Redo att diskutera dina behov?</h2>
+                    <p>Kontakta oss för en förutsättningslös diskussion om hur vi kan hjälpa just ditt företag.</p>
+                    <a href="kontakt.html" class="btn btn-primary">Kontakta oss</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-widgets">
+                <div class="footer-widget">
+                    <div class="footer-logo">
+                        <img src="img/logo-white.svg" alt="Kund AB" width="120" height="40">
+                    </div>
+                    <p>Vi hjälper företag att förenkla sin vardag med modern teknik och smarta lösningar.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/kund-ab" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/kundab" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/kundab" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Tjänster</h3>
+                    <ul class="footer-menu">
+                        <li><a href="tjanster/digital-arbetsplats.html">Digital arbetsplats</a></li>
+                        <li><a href="tjanster/webbutveckling.html">Webbutveckling</a></li>
+                        <li><a href="tjanster/it-drift.html">IT-drift</a></li>
+                        <li><a href="tjanster.html">Alla tjänster</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Om Kund</h3>
+                    <ul class="footer-menu">
+                        <li><a href="om-oss.html">Om oss</a></li>
+                        <li><a href="kontor.html">Våra kontor</a></li>
+                        <li><a href="karriar.html">Karriär</a></li>
+                        <li><a href="hallbarhet.html">Hållbarhet</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Kontakt &amp; Support</h3>
+                    <ul class="footer-menu">
+                        <li><a href="kontakt.html">Kontakta oss</a></li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="faq.html">Vanliga frågor</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2024 Kund AB. Alla rättigheter förbehållna.
+                </div>
+                <div class="footer-links">
+                    <a href="integritetspolicy.html">Integritetspolicy</a>
+                    <a href="cookiepolicy.html">Cookiepolicy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cookie-consent.js"></script>
+</body>
+</html>

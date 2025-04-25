@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontakta Kund AB för rådgivning om IT-tjänster, digital arbetsplats, webbutveckling och IT-drift. Vi finns i Stockholm, Göteborg och Malmö.">
+    <title>Kontakt | Gibon AB</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Leaflet CSS för kartan -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <!-- Schema.org strukturerad data enligt Google's riktlinjer -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Kund AB",
+      "url": "https://kund.se",
+      "logo": "https://kund.se/img/logo.svg",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+46-8-123456",
+          "contactType": "customer service",
+          "areaServed": "Stockholm"
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+46-31-123456",
+          "contactType": "customer service",
+          "areaServed": "Göteborg"
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+46-40-123456",
+          "contactType": "customer service",
+          "areaServed": "Malmö"
+        }
+      ]
+    }
+    </script>
+    <style>
+    /* Inline additional styles to enhance the contact page */
+    
+    /* Background accent */
+/* Background accent */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.page-header {
+    background: linear-gradient(135deg, #2d50a7 0%, #5372c4); 
+    padding: 60px 0 49px; 
+    color: white;
+    position: relative;
+    overflow: hidden;
+    }
+    
+    .page-header:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+        border-radius: 50%;
+        transform: translate(30%, -30%);
+    }
+    
+    .page-header h1 {
+    color: white;
+    font-size: 3rem; 
+    margin-bottom: 5px; 
+}
+    
+    .breadcrumbs {
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .breadcrumbs a {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+    }
+    
+    .breadcrumbs a:hover {
+        color: white;
+        text-decoration: underline;
+    }
+    
+    /* Intro section enhancement */
+    .section-intro {
+    background-color: #e6f0ff;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0 60px; /* Ökad padding jämfört med standardvärdet */
+    }
+    
+    .section-intro:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        background: linear-gradient(to bottom right, transparent 49%, white 50%);
+    }
+    
+    .intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    padding: 20px 0; /* Lagt till extra inre padding */
+    }
+
+    .intro-content h2 {
+    font-size: 2.4rem; /* Lite större rubrik */
+    margin-bottom: 25px; /* Större mellanrum till brödtexten */
+    }
+
+    .intro-content .lead {
+    font-size: 1.3rem; /* Större brödtext */
+    line-height: 1.6;
+    margin-bottom: 25px;
+    }
+    
+    /* Contact section styling */
+    .contact-section {
+        padding: 80px 0;
+        background: white;
+    }
+    
+    /* Section title style */
+    .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+        padding-bottom: 15px;
+        color: #333;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    
+    .section-title:after {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 3px;
+        background: #0066cc;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    /* Support-form style for contact form */
+    .contact-form {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+    
+    .form-row {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 20px;
+    }
+    
+    .form-row .form-group {
+        flex: 1;
+    }
+    
+    .form-group {
+        margin-bottom: 25px;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: #444;
+    }
+    
+    .form-group small {
+        display: block;
+        margin-top: 8px;
+        color: #777;
+        font-size: 13px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="file"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        background: #f9f9f9;
+        font-size: 16px;
+        transition: all 0.3s;
+    }
+    
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    select:focus,
+    textarea:focus {
+        background: white;
+        border-color: #0066cc;
+        box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        outline: none;
+    }
+    
+    .form-checkbox {
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .form-checkbox input {
+        margin-top: 6px;
+        margin-right: 10px;
+    }
+    
+    .form-submit {
+        margin-top: 30px;
+        text-align: center;
+    }
+    
+    .form-submit button {
+        background: #0066cc;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 14px 30px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: 0 4px 6px rgba(0, 102, 204, 0.2);
+        min-width: 200px;
+    }
+    
+    .form-submit button:hover {
+        background: #004d99;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 102, 204, 0.3);
+    }
+    
+    /* Required field indicator */
+    .required {
+        color: #e74c3c;
+    }
+    
+    /* Contact info enhancements */
+    .contact-info-section {
+        background-color: #f5f8fa;
+        padding: 70px 0;
+    }
+    
+    .contact-info-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0 -15px;
+    }
+    
+    .contact-info-item {
+        flex: 1;
+        min-width: 250px;
+        margin: 0 15px 30px;
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .contact-icon {
+        background-color: rgba(0, 102, 204, 0.1);
+        color: #0066cc;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        font-size: 24px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        flex-shrink: 0;
+    }
+    
+    .contact-text h3 {
+        margin-bottom: 10px;
+        font-size: 18px;
+        color: #0066cc;
+    }
+    
+    .contact-text p {
+        margin-bottom: 5px;
+        color: #555;
+    }
+    
+    .contact-text p a {
+        color: #0066cc;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s;
+    }
+    
+    .contact-text p a:hover {
+        color: #004d99;
+        text-decoration: underline;
+    }
+    
+    .contact-text .social-links {
+        display: flex;
+        gap: 10px;
+        margin-top: 5px;
+    }
+    
+    .contact-text .social-links a {
+        background-color: rgba(0, 102, 204, 0.1);
+        color: #0066cc;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        text-decoration: none;
+    }
+    
+    .contact-text .social-links a:hover {
+        background-color: #0066cc;
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+    }
+    
+    /* FAQ enhancements */
+    .faq-section {
+        background: #f5f8fa;
+        padding: 80px 0 60px;
+        position: relative;
+    }
+    
+    .faq-container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    .faq-item {
+        margin-bottom: 15px;
+        border-radius: 8px;
+        overflow: hidden;
+        background: white;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s;
+    }
+    
+    .faq-item:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .faq-question {
+        padding: 20px 25px;
+        background: white;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid transparent;
+        transition: all 0.3s;
+    }
+    
+    .faq-item.active .faq-question {
+        border-bottom-color: #e0e0e0;
+        background: #f9f9f9;
+    }
+    
+    .faq-question h3 {
+        margin: 0;
+        font-size: 18px;
+        color: #444;
+        font-weight: 500;
+    }
+    
+    .faq-toggle {
+        width: 24px;
+        height: 24px;
+        background: rgba(0, 102, 204, 0.1);
+        color: #0066cc;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+    }
+    
+    .faq-toggle i {
+        font-size: 12px;
+        transition: all 0.3s;
+    }
+    
+    .faq-item.active .faq-toggle {
+        background: #0066cc;
+        color: white;
+    }
+    
+    .faq-item.active .faq-toggle i {
+        transform: rotate(45deg);
+    }
+    
+    .faq-answer {
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 20px 25px;
+        max-height: 1000px;
+    }
+    
+    .faq-more {
+        margin-top: 30px;
+    }
+    
+    .faq-more a {
+        color: #0066cc;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s;
+    }
+    
+    .faq-more a:hover {
+        color: #004d99;
+        text-decoration: underline;
+    }
+    
+    /* Social links styling */
+    .social-links {
+        display: flex;
+    }
+    
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background: rgba(0, 102, 204, 0.1);
+        color: #0066cc;
+        border-radius: 50%;
+        margin-right: 10px;
+        transition: all 0.3s;
+        text-decoration: none;
+    }
+    
+    .social-links a:hover {
+        background: #0066cc;
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+    }
+    </style>
+</head>
+<body class="page-kontakt">
+    <!-- Cookie-banner -->
+    <div id="cookie-consent" class="cookie-banner">
+        <div class="container">
+            <div class="cookie-content">
+                <h3>Cookies på gibon.se</h3>
+                <p>Vi använder cookies för att förbättra din upplevelse på vår webbplats. Genom att fortsätta använda webbplatsen godkänner du användningen av cookies.</p>
+                <div class="cookie-actions">
+                    <button id="accept-cookies" class="btn btn-primary">Acceptera alla</button>
+                    <button id="customize-cookies" class="btn btn-secondary">Anpassa inställningar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.svg.png" alt="Kund AB Logotyp" width="120" height="40">
+                    </a>
+                </div>
+                <nav class="main-navigation">
+                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                        <span class="screen-reader-text">Meny</span>
+                        <span class="hamburger"></span>
+                    </button>
+                    <ul id="primary-menu" class="menu">
+                        <li class="menu-item"><a href="index.html">Hem</a></li>
+                        <li class="menu-item has-children">
+                            <a href="tjanster.html">Tjänster</a>
+                            <ul class="sub-menu">
+                                <li><a href="tjanster/digital-arbetsplats.html">Digital arbetsplats</a></li>
+                                <li><a href="tjanster/webbutveckling.html">Webbutveckling</a></li>
+                                <li><a href="tjanster/it-drift.html">IT-drift</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"><a href="om-oss.html">Om Gibon</a></li>
+                        <li class="menu-item"><a href="karriar.html">Karriär</a></li>
+                        <li class="menu-item"><a href="hallbarhet.html">Hållbarhet</a></li>
+                        <li class="menu-item"><a href="nyheter.html">Nyheter</a></li>
+                        <li class="menu-item current-menu-item"><a href="kontakt.html">Kontakt</a></li>
+                        <li class="menu-item highlight"><a href="support.html">Support</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidhuvud -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Kontakta oss</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Hem</a> / <span>Kontakt</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Huvudinnehåll -->
+    <main class="site-main">
+        <!-- Introduktion -->
+        <section class="section-intro">
+            <div class="container">
+                <div class="intro-content text-center">
+                    <h2>Hur kan vi hjälpa dig?</h2>
+                    <p class="lead">Oavsett om du har frågor om våra tjänster, vill diskutera ett potentiellt samarbete eller behöver hjälp med ett befintligt projekt, är vi här för att hjälpa dig.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">Vanliga frågor</h2>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Hur snabbt kan ni hjälpa oss att implementera en digital arbetsplats?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Implementationstiden beror på omfattningen av projektet och er organisations storlek. Ett typiskt projekt tar mellan 4-12 veckor från start till färdig implementation. Vi börjar alltid med en behovsanalys för att kunna ge en mer exakt tidsuppskattning för just ert projekt.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Vad kostar era tjänster?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Priset på våra tjänster varierar beroende på omfattning, komplexitet och specifika behov. Vi erbjuder både timbaserade priser och fasta paketpriser. Kontakta oss för en kostnadsfri behovsanalys och offert som är anpassad för just ert företag.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Har ni erfarenhet från vår bransch?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Vi har erfarenhet från ett brett spektrum av branscher, inklusive tillverkning, tjänsteföretag, offentlig sektor, detaljhandel, finans och hälsovård. Vi anpassar alltid våra lösningar efter branschspecifika behov och krav. Kontakta oss gärna för att få exempel på tidigare projekt inom er bransch.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Hur säkerställer ni att implementationen går smidigt?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Vi arbetar enligt en beprövad projektmodell som säkerställer en smidig implementation. Detta inkluderar noggrann planering, löpande avstämningar, riskhantering och en stegvis implementationsprocess. Vi lägger även stor vikt vid utbildning och förändringshantering för att säkerställa att medarbetarna kan ta till sig de nya verktygen och arbetssätten.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-more text-center">
+                    <p>Har du andra frågor? <a href="kontakt.html">Kontakta oss</a> eller besök vår <a href="faq.html">FAQ-sida</a> för mer information.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontaktformulär (uppdaterad stil som matchar support-sidan) -->
+        <section class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Skicka ett meddelande</h2>
+                
+                <form id="contact-form" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Namn <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" placeholder="Ditt namn" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Företag <span class="required">*</span></label>
+                            <input type="text" id="company" name="company" placeholder="Ditt företag" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">E-post <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="din.epost@foretag.se" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone" placeholder="07X-XXX XX XX">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Ämne <span class="required">*</span></label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Välj ett ämne</option>
+                            <option value="digital-arbetsplats">Digital arbetsplats</option>
+                            <option value="webbutveckling">Webbutveckling</option>
+                            <option value="it-drift">IT-drift</option>
+                            <option value="offert">Offertförfrågan</option>
+                            <option value="annat">Annat</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Meddelande <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="5" placeholder="Beskriv hur vi kan hjälpa dig..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group form-checkbox">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">Jag godkänner att Gibon AB lagrar och behandlar mina personuppgifter enligt <a href="integritetspolicy.html">integritetspolicyn</a>. <span class="required">*</span></label>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary">Skicka meddelande</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        
+        <!-- Kontaktinformation -->
+        <section class="contact-info-section">
+            <div class="container">
+                <h2 class="section-title">Kontaktinformation</h2>
+                
+                <div class="contact-info-grid">
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>E-post</h3>
+                            <p><a href="mailto:info@kund.se">info@gibon.se</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Telefon</h3>
+                            <p><a href="tel:+46812345678">08-123 456 78</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Öppettider</h3>
+                            <p>Måndag-fredag: 08:00-17:00</p>
+                            <p>Lördag-söndag: Stängt</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Följ oss</h3>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/company/kund-ab" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://twitter.com/kundab" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/kundab" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/kundab" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-widgets">
+                <div class="footer-widget">
+                    <div class="footer-logo">
+                        <img src="img/logo.svg.png" alt="Kund AB" width="120" height="40">
+                    </div>
+                    <p>Vi hjälper företag att förenkla sin vardag med modern teknik och smarta lösningar.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/kund-ab" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/kundab" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/kundab" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Tjänster</h3>
+                    <ul class="footer-menu">
+                        <li><a href="tjanster/digital-arbetsplats.html">Digital arbetsplats</a></li>
+                        <li><a href="tjanster/webbutveckling.html">Webbutveckling</a></li>
+                        <li><a href="tjanster/it-drift.html">IT-drift</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>    
+</body>
+</html>
+    

@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Om Gibon - ett ledande IT-företag med fokus på digital arbetsplats, webbutveckling och IT-drift. Lär känna oss och vår historia.">
+    <title>Om Gibon | Gibon</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Schema.org strukturerad data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Gibon",
+      "url": "https://gibon.se",
+      "logo": "https://gibon.se/img/logo.svg",
+      "description": "Gibon är ett ledande IT-företag som erbjuder tjänster inom digital arbetsplats, webbutveckling och IT-drift.",
+      "foundingDate": "2012",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sveavägen 100",
+        "addressLocality": "Stockholm",
+        "postalCode": "113 50",
+        "addressCountry": "SE"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+46-8-123456",
+        "contactType": "customer service"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/gibon",
+        "https://twitter.com/gibon",
+        "https://www.facebook.com/gibon"
+      ]
+    }
+    </script>
+    <style>
+    /* Stilar för om-oss sidan */
+    :root {
+        --primary-color: #2d50a7;
+        --secondary-color: #5372c4;
+        --accent-color: #ff6b35;
+        --light-gray: #f5f7fa;
+        --medium-gray: #e4e8ef;
+        --dark-gray: #4a4a4a;
+        --text-color: #333;
+        --border-radius: 8px;
+        --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        --transition: all 0.3s ease;
+    }
+    
+    body {
+        font-family: 'Roboto', sans-serif;
+        color: var(--text-color);
+        line-height: 1.6;
+        background-color: #fff;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Source Sans Pro', sans-serif;
+        margin-top: 0;
+        color: #222;
+    }
+
+    h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+    h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+
+    .section-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--accent-color);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    /* Page Header */
+    .page-header {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: white;
+        padding: 3rem 0;
+        text-align: center;
+    }
+
+    .page-header h1 {
+        margin: 0;
+        color: white;
+        font-weight: 700;
+        font-size: 2.8rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .breadcrumbs {
+        color: rgba(255, 255, 255, 0.85);
+        margin-top: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .breadcrumbs a {
+        color: white;
+        text-decoration: none;
+        transition: var(--transition);
+    }
+
+    .breadcrumbs a:hover {
+        text-decoration: underline;
+    }
+
+    /* Om oss intro sektion */
+    .about-intro {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        margin: 2rem 0 4rem;
+    }
+
+    .about-intro-content {
+        flex: 1;
+    }
+
+    .about-intro-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .about-intro-content p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: var(--dark-gray);
+    }
+
+    .about-intro-image {
+        flex: 1;
+        max-width: 500px;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+    }
+
+    .about-intro-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Historia tidslinje */
+    .history-section {
+        background-color: var(--light-gray);
+        padding: 5rem 0;
+    }
+
+    .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background-color: var(--primary-color);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+        border-radius: 3px;
+    }
+
+    .timeline-item {
+        padding: 10px 40px;
+        position: relative;
+        width: 50%;
+        box-sizing: border-box;
+    }
+
+    .timeline-item::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        border: 4px solid var(--accent-color);
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    .timeline-left {
+        left: 0;
+    }
+
+    .timeline-right {
+        left: 50%;
+    }
+
+    .timeline-left::after {
+        right: -12px;
+    }
+
+    .timeline-right::after {
+        left: -12px;
+    }
+
+    .timeline-content {
+        padding: 20px 30px;
+        background-color: white;
+        position: relative;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+    }
+
+    .timeline-content h3 {
+        margin-top: 0;
+        color: var(--primary-color);
+        font-size: 1.3rem;
+    }
+
+    .timeline-date {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: var(--accent-color);
+    }
+
+    /* Värderingar */
+    .values-section {
+        padding: 5rem 0;
+    }
+
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .value-card {
+        background-color: white;
+        padding: 2.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        text-align: center;
+        transition: var(--transition);
+    }
+
+    .value-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .value-icon {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+    }
+
+    .value-card h3 {
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+    }
+
+    .value-card p {
+        color: var(--dark-gray);
+    }
+
+    /* Team */
+    .team-section {
+        background-color: var(--light-gray);
+        padding: 5rem 0;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .team-member {
+        background-color: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+    }
+
+    .team-member:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .team-photo {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .team-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .team-member:hover .team-photo img {
+        transform: scale(1.05);
+    }
+
+    .team-info {
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .team-info h3 {
+        margin: 0 0 0.5rem;
+    }
+
+    .team-role {
+        color: var(--accent-color);
+        font-weight: 500;
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .team-social {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .team-social a {
+        color: var(--dark-gray);
+        transition: var(--transition);
+    }
+
+    .team-social a:hover {
+        color: var(--primary-color);
+    }
+
+    /* CTA */
+    .cta-section {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: white;
+        text-align: center;
+        padding: 5rem 0;
+    }
+
+    .cta-content h2 {
+        color: white;
+        margin-bottom: 1.5rem;
+        font-size: 2.5rem;
+    }
+
+    .cta-content p {
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+
+    .cta-content .btn-primary {
+        background-color: var(--accent-color);
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+        display: inline-block;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        font-weight: 600;
+        text-align: center;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+        color: white;
+    }
+    
+    .cta-content .btn-primary:hover {
+        background-color: #e85a26;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 107, 53, 0.25);
+    }
+
+    /* Statistik sektion */
+    .stats-section {
+        padding: 5rem 0;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .stat-item {
+        padding: 2rem;
+    }
+
+    .stat-number {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+        line-height: 1;
+    }
+
+    .stat-label {
+        font-size: 1.1rem;
+        color: var(--dark-gray);
+    }
+    </style>
+</head>
+<body class="page-om-oss">
+    <!-- Cookie-banner -->
+    <div id="cookie-consent" class="cookie-banner">
+        <div class="container">
+            <div class="cookie-content">
+                <h3>Cookies på gibon.se</h3>
+                <p>Vi använder cookies för att förbättra din upplevelse på vår webbplats. Genom att fortsätta använda webbplatsen godkänner du användningen av cookies.</p>
+                <div class="cookie-actions">
+                    <button id="accept-cookies" class="btn btn-primary">Acceptera alla</button>
+                    <button id="customize-cookies" class="btn btn-secondary">Anpassa inställningar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.svg.png" alt="Gibon Logotyp" width="120" height="40">
+                    </a>
+                </div>
+                <nav class="main-navigation">
+                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                        <span class="screen-reader-text">Meny</span>
+                        <span class="hamburger"></span>
+                    </button>
+                    <ul id="primary-menu" class="menu">
+                        <li class="menu-item"><a href="index.html">Hem</a></li>
+                        <li class="menu-item has-children">
+                            <a href="tjanster.html">Tjänster</a>
+                            <ul class="sub-menu">
+                                <li><a href="tjanster/digital-arbetsplats.html">Digital arbetsplats</a></li>
+                                <li><a href="tjanster/webbutveckling.html">Webbutveckling</a></li>
+                                <li><a href="tjanster/it-drift.html">IT-drift</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item current-menu-item"><a href="om-oss.html">Om Gibon</a></li>
+                        <li class="menu-item"><a href="karriar.html">Karriär</a></li>
+                        <li class="menu-item"><a href="hallbarhet.html">Hållbarhet</a></li>
+                        <li class="menu-item"><a href="nyheter.html">Nyheter</a></li>
+                        <li class="menu-item"><a href="kontakt.html">Kontakt</a></li>
+                        <li class="menu-item highlight"><a href="support.html">Support</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidhuvud -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Om Gibon</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Hem</a> / <span>Om Gibon</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Huvudinnehåll -->
+    <main class="site-main">
+        <!-- Introduktion -->
+        <section class="section-intro">
+            <div class="container">
+                <div class="about-intro">
+                    <div class="about-intro-content">
+                        <h2>Vi digitaliserar det svenska näringslivet</h2>
+                        <p>Gibon grundades 2012 med en stark vision: att hjälpa företag att dra nytta av digitaliseringens kraft. Sedan dess har vi vuxit till ett av Sveriges ledande IT-konsultföretag med expertis inom digital arbetsplats, webbutveckling och IT-drift.</p>
+                        <p>Vår framgång bygger på långsiktiga kundrelationer, hög teknisk kompetens och ett genuint engagemang för att skapa värde. Vi kombinerar teknisk expertis med affärsförståelse för att leverera lösningar som verkligen gör skillnad för våra kunder.</p>
+                        <p>Idag har vi över 150 medarbetare fördelade på våra kontor i Stockholm, Göteborg och Malmö. Tillsammans arbetar vi för att hjälpa företag att lyckas i den digitala världen.</p>
+                    </div>
+                    <div class="about-intro-image">
+                        <img src="img/gibon_kontor.jpg.png" alt="Gibon kontor" width="800" height="550">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistik -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">150+</div>
+                        <div class="stat-label">Medarbetare</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">300+</div>
+                        <div class="stat-label">Kunder</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">År i branschen</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Kontor</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historia -->
+        <section class="history-section">
+            <div class="container">
+                <h2 class="section-title">Vår historia</h2>
+                <div class="timeline">
+                    <div class="timeline-item timeline-left">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2012</div>
+                            <h3>Gibons grundande</h3>
+                            <p>Gibon grundades i Stockholm av tre erfarna IT-konsulter med en vision om att skapa ett företag som sätter kunden i centrum.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item timeline-right">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2014</div>
+                            <h3>Expansion till Göteborg</h3>
+                            <p>Efter framgångsrika första år öppnade vi vårt andra kontor i Göteborg för att möta den växande efterfrågan i västra Sverige.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item timeline-left">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2016</div>
+                            <h3>Lansering av webbutvecklingstjänster</h3>
+                            <p>Vi utökade vårt erbjudande med specialiserade webbutvecklingstjänster för att hjälpa våra kunder att skapa moderna digitala upplevelser.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item timeline-right">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2018</div>
+                            <h3>Malmökontoret öppnar</h3>
+                            <p>Gibon expanderade till södra Sverige med ett nytt kontor i Malmö, vilket gav oss en starkare närvaro i hela landet.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item timeline-left">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2021</div>
+                            <h3>Lansering av Digital Arbetsplats</h3>
+                            <p>Som svar på den ökade efterfrågan på flexibla arbetssätt lanserade vi vårt nya tjänsteområde Digital Arbetsplats.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item timeline-right">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2024</div>
+                            <h3>Fortsatt tillväxt</h3>
+                            <p>Idag är vi stolta över att ha över 150 medarbetare som hjälper företag i hela Sverige med deras digitala transformation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Värderingar -->
+        <section class="values-section">
+            <div class="container">
+                <h2 class="section-title">Våra värderingar</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Samarbete</h3>
+                        <p>Vi tror på kraften i samarbete och arbetar nära våra kunder för att förstå deras behov och utmaningar. Genom transparent kommunikation och tillit bygger vi långsiktiga relationer.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Innovation</h3>
+                        <p>Vi är nyfikna och framåtblickande. Genom att ständigt utforska nya teknologier och metoder säkerställer vi att våra kunder alltid får tillgång till de bästa lösningarna.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Kvalitet</h3>
+                        <p>Vi kompromissar aldrig med kvaliteten i vårt arbete. Varje projekt genomförs med noggrannhet, precision och höga ambitioner för att leverera resultat som överträffar förväntningarna.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ledningsgrupp -->
+        <section class="team-section">
+            <div class="container">
+                <h2 class="section-title">Ledningsgrupp</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="img/erik_lindberg.png" alt="Erik Lindberg" width="300" height="300">
+                        </div>
+                        <div class="team-info">
+                            <h3>Erik Lindberg</h3>
+                            <span class="team-role">VD</span>
+                            <p>Erik har över 20 års erfarenhet från IT-branschen och grundade Gibon 2012.</p>
+                            <div class="team-social">
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="img/sofia_bergstrom.png" alt="Sofia Bergström" width="300" height="300">
+                        </div>
+                        <div class="team-info">
+                            <h3>Sofia Bergström</h3>
+                            <span class="team-role">CTO</span>
+                            <p>Sofia leder vårt tekniska team och säkerställer att vi alltid ligger i framkant av teknologisk utveckling.</p>
+                            <div class="team-social">
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="img/markus_holm.png" alt="Markus Holm" width="300" height="300">
+                        </div>
+                        <div class="team-info">
+                            <h3>Markus Holm</h3>
+                            <span class="team-role">CFO</span>
+                            <p>Markus har ansvar för företagets ekonomi och finansiella strategi för att säkerställa hållbar tillväxt.</p>
+                            <div class="team-social">
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="img/linda_karlsson.png" alt="Linda Karlsson" width="300" height="300">
+                        </div>
+                        <div class="team-info">
+                            <h3>Linda Karlsson</h3>
+                            <span class="team-role">HR-chef</span>
+                            <p>Linda ansvarar för vår viktigaste tillgång - våra medarbetare, och arbetar för att Gibon ska vara en attraktiv arbetsgivare.</p>
+                            <div class="team-social">
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Vill du bli en del av vårt team?</h2>
+                    <p>Vi är alltid på jakt efter talangfulla personer som delar våra värderingar och vill vara med på vår resa.</p>
+                    <a href="karriar.html" class="btn btn-primary">Se lediga tjänster</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-widgets">
+                <div class="footer-widget">
+                    <div class="footer-logo">
+                        <img src="img/logo.svg.png" alt="Gibon" width="120" height="40">
+                    </div>
+                    <p>Vi hjälper företag att förenkla sin vardag med modern teknik och smarta lösningar.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/gibon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/gibon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/gibon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Tjänster</h3>
+                    <ul class="footer-menu">
+                        <li><a href="tjanster/digital-arbetsplats.html">Digital arbetsplats</a></li>
+                        <li><a href="tjanster/webbutveckling.html">Webbutveckling</a></li>
+                        <li><a href="tjanster/it-drift.html">IT-drift</a></li>
+                        <li><a href="tjanster.html">Alla tjänster</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Om Gibon</h3>
+                    <ul class="footer-menu">
+                        <li><a href="om-oss.html">Om oss</a></li>
+                        <li><a href="kontor.html">Våra kontor</a></li>
+                        <li><a href="karriar.html">Karriär</a></li>
+                        <li><a href="hallbarhet.html">Hållbarhet</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3 class="widget-title">Kontakt &amp; Support</h3>
+                    <ul class="footer-menu">
+                        <li><a href="kontakt.html">Kontakta oss</a></li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="faq.html">Vanliga frågor</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2024 Gibon. Alla rättigheter förbehållna.
+                </div>
+                <div class="footer-links">
+                    <a href="integritetspolicy.html">Integritetspolicy</a>
+                    <a href="cookiepolicy.html">Cookiepolicy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cookie-consent.js"></script>
+</body>
+</html>

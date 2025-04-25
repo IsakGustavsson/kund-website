@@ -1,0 +1,312 @@
+/**
+ * Kund AB - Responsiva stilar
+ * Följer Mobile First-principen enligt kravspecifikationen
+ */
+
+/* ------------------------------------------------------------ 
+   MOBIL FÖRST (Default stilar är för mobil)
+   ------------------------------------------------------------ */
+
+/* Grundstil för mobil */
+@media (max-width: 767px) {
+    /* Header och navigering */
+    .header-inner {
+        padding: 0.75rem 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .main-navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--color-white);
+        box-shadow: var(--shadow-medium);
+        padding: 1rem;
+        display: none;
+    }
+    
+    .main-navigation.active {
+        display: block;
+    }
+    
+    .menu {
+        flex-direction: column;
+    }
+    
+    .menu-item {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .menu-item.has-children > a::after {
+        float: right;
+    }
+    
+    .sub-menu {
+        position: static;
+        display: none;
+        box-shadow: none;
+        padding-left: 1rem;
+    }
+    
+    .menu-item.has-children.active > .sub-menu {
+        display: block;
+    }
+
+    /* Hero-sektion */
+    .hero {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+    }
+
+    /* Tjänste-grid */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    /* Nyhetsflöde */
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    /* Kundcase */
+    .case-card {
+        grid-template-columns: 1fr;
+    }
+
+    /* Lediga jobb */
+    .jobs-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    /* Kontor */
+    .offices-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    /* Footer */
+    .footer-widgets {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+    
+    .footer-links {
+        justify-content: center;
+        margin-top: var(--spacing-md);
+    }
+    
+    /* Cookie-banner */
+    .cookie-actions {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+}
+
+/* ------------------------------------------------------------ 
+   SURFPLATTA
+   ------------------------------------------------------------ */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Header och navigering */
+    .menu-toggle {
+        display: none;
+    }
+    
+    .menu-item {
+        margin-left: var(--spacing-md);
+    }
+
+    /* Hero-sektion */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Tjänste-grid */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Nyhetsflöde */
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Kundcase */
+    .case-card {
+        grid-template-columns: 1fr;
+    }
+
+    /* Lediga jobb */
+    .jobs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Kontor */
+    .offices-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Footer */
+    .footer-widgets {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ------------------------------------------------------------ 
+   DESKTOP
+   ------------------------------------------------------------ */
+@media (min-width: 1024px) {
+    /* Header och navigering */
+    .menu-toggle {
+        display: none;
+    }
+
+    /* Hero-sektion */
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .hero-cta {
+        flex-direction: row;
+    }
+
+    /* Tjänste-grid */
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Nyhetsflöde */
+    .news-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Kundcase */
+    .case-card {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Lediga jobb */
+    .jobs-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Kontor */
+    .offices-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Footer */
+    .footer-widgets {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ------------------------------------------------------------ 
+   STOR DESKTOP
+   ------------------------------------------------------------ */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+/* ------------------------------------------------------------ 
+   PRINT
+   ------------------------------------------------------------ */
+@media print {
+    .site-header,
+    .site-footer,
+    .cookie-banner,
+    .menu-toggle,
+    .hero-cta,
+    .social-links,
+    .case-navigation,
+    .cta-section {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+    }
+    
+    .container {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+    
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+    
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .hero,
+    .services-grid,
+    .news-grid,
+    .jobs-grid,
+    .offices-grid {
+        display: block;
+    }
+    
+    .service-card,
+    .news-card,
+    .job-card,
+    .office-card {
+        page-break-inside: avoid;
+        margin-bottom: 20pt;
+        border: 1pt solid #ddd;
+    }
+}
